@@ -13,6 +13,13 @@
         android:theme="@style/Theme.DgNiryat"
         tools:targetApi="31">
         <activity
+            android:name=".Activity.profile_user"
+            android:exported="false"
+            android:label="@string/title_activity_profile_user" />
+        <activity
+            android:name=".Activity.sign_up"
+            android:exported="false" />
+        <activity
             android:name=".Activity.Login"
             android:exported="false" />
         <activity
