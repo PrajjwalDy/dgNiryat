@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".Activity.sign_up">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -83,7 +84,7 @@
                     android:textColor="@color/red" />
 
                 <EditText
-                    android:id="@+id/uid_edit_text"
+                    android:id="@+id/Email_edit_text"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginStart="20dp"
@@ -94,7 +95,7 @@
                     android:textColor="@color/red" />
 
                 <EditText
-                    android:id="@+id/phone_edit_text"
+                    android:id="@+id/phone_number_text"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginStart="20dp"
@@ -138,7 +139,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="10dp"
-                    android:text="Have account"
+                    android:text="Have account !"
                     android:textColor="@color/red"
                     android:textSize="18sp"
                     android:textStyle="bold" />

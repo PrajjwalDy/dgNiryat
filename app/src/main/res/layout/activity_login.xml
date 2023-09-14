@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    >
+    tools:context=".Activity.Login">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:elevation="10dp"
         android:background="@drawable/background_bg"
         >
 
@@ -63,7 +63,7 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/uid_edit_text"
+            android:id="@+id/mail_txt"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_margin="20dp"
@@ -73,7 +73,7 @@
             android:textColor="@color/red" />
 
         <EditText
-            android:id="@+id/password_edit_text"
+            android:id="@+id/password_txt"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginStart="20dp"
@@ -111,6 +111,7 @@
             android:textSize="16sp" />
 
         <TextView
+            android:id="@+id/create_account"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="100dp"
@@ -120,22 +121,27 @@
             android:textSize="30sp"
             android:textStyle="bold" />
 
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="-220dp"
-            android:layout_marginTop="19dp"
-            android:src="@drawable/Azadi" />
+           <ImageView
+               android:layout_width="0dp"
+               android:layout_height="200dp"
+               android:layout_weight="1"
+               android:src="@drawable/amrit" />
 
-        <ImageView
-            android:layout_width="220dp"
-            android:layout_height="190dp"
-            android:layout_marginStart="170dp"
-            android:layout_marginTop="-190dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="1dp"
-            android:src="@drawable/india" />
+           <ImageView
+               android:layout_width="0dp"
+               android:layout_height="200dp"
+               android:layout_weight="1"
+               android:layout_marginBottom="1dp"
+               android:src="@drawable/india" />
+
+
+       </LinearLayout>
+
 
 
     </LinearLayout>
