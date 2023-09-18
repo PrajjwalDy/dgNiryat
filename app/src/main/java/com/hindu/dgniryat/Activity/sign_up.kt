@@ -30,16 +30,17 @@ class sign_up : AppCompatActivity() {
     private lateinit var email: EditText
     private lateinit var phone: EditText
     private lateinit var password: EditText
+    private lateinit var haveAccount_text:TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
 
-        val haveAccount_text = findViewById<TextView>(R.id.haveAccount_text)
+        haveAccount_text = findViewById<TextView>(R.id.haveAccount_text)
         val signUp_button = findViewById<Button>(R.id.signUp_button)
         fullName = findViewById<EditText>(R.id.fullName_edit_text)
-        email = findViewById<EditText>(R.id.phone_number_text)
-        phone = findViewById<EditText>(R.id.password_Create_AC)
+        email = findViewById<EditText>(R.id.email_edit_text)
+        phone = findViewById<EditText>(R.id.phone_number_text)
         password = findViewById(R.id.password_Create_AC)
 
 
@@ -57,27 +58,26 @@ class sign_up : AppCompatActivity() {
     private fun signUp() {
 
         val fullName = fullName.text.toString().trim { it <= ' ' }
-
-        val email = email.text.toString()
+        val email = email.text.toString().trim { it <= ' ' }
         val phone = phone.text.toString().trim { it <= ' ' }
         val password = password.text.toString().trim { it <= ' ' }
 
         when {
-            TextUtils.isEmpty(fullName.trim { it <= ' ' }) -> {
+            TextUtils.isEmpty(fullName) -> {
                 Toast.makeText(this@sign_up, "Please enter your Full Name", Toast.LENGTH_SHORT)
                     .show()
             }
 
-            TextUtils.isEmpty(email.trim { it <= ' ' }) -> {
+            TextUtils.isEmpty(email) -> {
                 Toast.makeText(this@sign_up, "Please enter your UID", Toast.LENGTH_SHORT).show()
             }
 
-            TextUtils.isEmpty(phone.trim { it <= ' ' }) -> {
+            TextUtils.isEmpty(phone) -> {
                 Toast.makeText(this@sign_up, "Please enter your Phone Number", Toast.LENGTH_SHORT)
                     .show()
             }
 
-            TextUtils.isEmpty(password.toString()) -> {
+            TextUtils.isEmpty(password) -> {
                 Toast.makeText(this@sign_up, "Please enter your password", Toast.LENGTH_SHORT)
                     .show()
             }
@@ -96,8 +96,10 @@ class sign_up : AppCompatActivity() {
                         if (task.isSuccessful) {
                             saveData(fullName, email, phone, password, progressDialog)
                         } else {
+                            println(email)
                             val message = task.exception.toString()
-                            Toast.makeText(this, "Some Error Occurred: $message", Toast.LENGTH_LONG)
+                            haveAccount_text.text = message
+                            Toast.makeText(this, "$message", Toast.LENGTH_LONG)
                                 .show()
                             mAuth.signOut()
                             progressDialog.dismiss()

@@ -11,6 +11,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat.startActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuthWeakPasswordException
 import com.google.firebase.auth.FirebaseUser
 import com.hindu.dgniryat.MainActivity
 import com.hindu.dgniryat.R
@@ -19,12 +20,11 @@ import com.hindu.dgniryat.R.id.password_txt
 import com.hindu.dgniryat.databinding.ActivitySignUpBinding
 
 
-private val Any.text: Any
-    get() {
-        TODO("Not yet implemented")
-    }
 
 class Login : AppCompatActivity() {
+
+    private lateinit var email:EditText
+    private lateinit var password:EditText
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -32,15 +32,15 @@ class Login : AppCompatActivity() {
         val login_btn = findViewById<Button>(R.id.login_btn)
         val create_account = findViewById<TextView>(R.id.create_account)
         val forget_password_txt = findViewById<TextView>(R.id.forget_password_txt)
-        val mail_txt = findViewById<EditText>(R.id.mail_txt)
-        val password_txt = findViewById<EditText>(R.id.password_txt)
+        email = findViewById<EditText>(R.id.mail_txt)
+        password = findViewById<EditText>(R.id.password_txt)
 
         login_btn.setOnClickListener {
             login()
         }
 
         create_account.setOnClickListener {
-            val intent = Intent(this, ActivitySignUpBinding::class.java)
+            val intent = Intent(this, sign_up::class.java)
             startActivity(intent)
 
         }
@@ -51,16 +51,16 @@ class Login : AppCompatActivity() {
     }
 
     private fun login(){
-        val email = findViewById<EditText>(mail_txt).text.toString()
-        val password = findViewById<EditText>(password_txt).text.toString()
+        val email = email.text.toString().trim{ it <= ' '}
+        val password = password.text.toString().trim{ it <= ' '}
 
         when{
-            TextUtils.isEmpty(mail_txt.text.toString().trim{ it <= ' '})->{
+            TextUtils.isEmpty(email)->{
                 Toast.makeText(this@Login, "Please enter your Password", Toast.LENGTH_SHORT).show()
 
 
             }
-            TextUtils.isEmpty(password_txt.text.toString().trim{ it <= ' '})->{
+            TextUtils.isEmpty(password)->{
                 Toast.makeText(this@Login, "Please enter your Password", Toast.LENGTH_SHORT).show()
             }
 
@@ -98,6 +98,16 @@ class Login : AppCompatActivity() {
                         }
                     }
             }
+        }
+    }
+
+
+    override fun onStart() {
+        super.onStart()
+
+        val user : FirebaseUser? = FirebaseAuth.getInstance().currentUser
+        if (user != null){
+            startActivity(Intent(this,MainActivity::class.java))
         }
     }
 }

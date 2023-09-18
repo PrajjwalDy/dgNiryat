@@ -84,7 +84,7 @@
                     android:textColor="@color/red" />
 
                 <EditText
-                    android:id="@+id/Email_edit_text"
+                    android:id="@+id/email_edit_text"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginStart="20dp"
