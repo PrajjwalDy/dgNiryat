@@ -437,7 +437,4 @@
         app:tint="@android:color/white" />
 
 
-
-
-
 </RelativeLayout>

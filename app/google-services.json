@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "109003437230",
+    "firebase_url": "https://dgniryat-default-rtdb.firebaseio.com",
+    "project_id": "dgniryat",
+    "storage_bucket": "dgniryat.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:109003437230:android:960fe8ab32850f2149293f",
+        "android_client_info": {
+          "package_name": "com.hindu.dgniryat"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfpv55p7Y_AZwoUPPKhTEEliviCV7_H_8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
