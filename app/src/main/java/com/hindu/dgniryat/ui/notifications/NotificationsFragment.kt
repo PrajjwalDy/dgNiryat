@@ -1,4 +1,4 @@
-package com.hindu.dgniryat.Activity.ui.notifications
+package com.hindu.dgniryat.ui.notifications
 
 import android.os.Bundle
 import android.view.LayoutInflater

@@ -1,4 +1,4 @@
-package com.hindu.dgniryat.Activity.ui.dashboard
+package com.hindu.dgniryat.ui.dashboard
 
 import android.os.Bundle
 import android.view.LayoutInflater

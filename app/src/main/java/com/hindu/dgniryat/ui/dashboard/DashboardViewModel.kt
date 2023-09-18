@@ -1,4 +1,4 @@
-package com.hindu.dgniryat.Activity.ui.dashboard
+package com.hindu.dgniryat.ui.dashboard
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
