@@ -12,4 +12,7 @@ class DashboardViewModel : ViewModel() {
     //private val articleCallback:IConsignmentCallback = this
     private var messageError:MutableLiveData<String>? = null
 
+
+    //val articleModel:MutableLiveData<Li>
+
 }
