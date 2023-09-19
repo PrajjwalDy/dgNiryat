@@ -9,7 +9,14 @@
         android:id="@+id/navigation_home"
         android:name="com.hindu.dgniryat.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_postageCalculation"
+            app:destination="@id/postageCalculation" />
+        <action
+            android:id="@+id/action_navigation_home_to_bookArticle"
+            app:destination="@id/bookArticle" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_dashboard"
@@ -22,4 +29,23 @@
         android:name="com.hindu.dgniryat.ui.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.hindu.dgniryat.Fragments.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" />
+
+
+
+    <fragment
+        android:id="@+id/bookArticle"
+        android:name="com.hindu.dgniryat.Fragments.BookArticle"
+        android:label="fragment_book_article"
+        tools:layout="@layout/fragment_book_article" />
+    <fragment
+        android:id="@+id/postageCalculation"
+        android:name="com.hindu.dgniryat.Fragments.PostageCalculation"
+        android:label="fragment_postage_calculation"
+        tools:layout="@layout/fragment_postage_calculation" />
 </navigation>

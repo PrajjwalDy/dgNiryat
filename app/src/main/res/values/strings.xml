@@ -1,9 +1,56 @@
 <resources>
     <string name="app_name">dgNiryat</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
+    <string name="title_dashboard">Consignment</string>
     <string name="title_notifications">Notifications</string>
     <string name="title_activity_profile_user">profile_user</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string-array name="Country">
+        <item>Select Country</item>
+        <item>USA</item>
+        <item>England</item>
+        <item>Russia</item>
+        <item>France</item>
+        <item>Japan</item>
+    </string-array>
+
+
+    <string-array name="Product">
+        <item>Select Product</item>
+        <item>EMS Merchandise</item>
+        <item>EMS Document</item>
+        <item>Regd. Small Packet</item>
+        <item>Air Parcel</item>
+        <item>Regd.Letter</item>
+        <item>Tracked Packets</item>
+
+    </string-array>
+
+    <string-array name="ItemCategory">
+        <item>Select Item Category</item>
+        <item>Commercial Sample</item>
+        <item>Return Goods</item>
+        <item>Sale of Goods</item>
+        <item>Others</item>
+    </string-array>
+
+
+    <string-array name="NonDelivery">
+        <item>If Not Delivered</item>
+        <item>Abandoned</item>
+        <item>RTS-Priority</item>
+        <item>RTS-Non Priority</item>
+    </string-array>
+
+    <string-array name="PBE">
+        <item>Select PBE</item>
+        <item>PBE III(E-Commercial Items)</item>
+        <item>PBE IV(Non E-Commercial Items)</item>
+
+    </string-array>
+
+
 </resources>
