@@ -37,16 +37,17 @@ class DashboardViewModel : ViewModel(), IConsignmentCallback {
     private fun loadData() {
         val articleList = ArrayList<ArticleModel>()
         val data = FirebaseDatabase.getInstance().reference
-            .child("Consignment")
-            .child(FirebaseAuth.getInstance()
-                .currentUser!!.uid)
+            .child("Consignments")
 
         data.addValueEventListener(object:ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
                 articleList.clear()
                 for (snapshot in snapshot.children){
                     val data = snapshot.getValue(ArticleModel::class.java)
-                    articleList.add(data!!)
+                    if (data!!.publisher == FirebaseAuth.getInstance().currentUser!!.uid){
+                        articleList.add(data!!)
+
+                    }
                 }
                 articleCallback.onConsignmentLoadSuccess(articleList)
             }
