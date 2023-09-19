@@ -32,6 +32,15 @@ class HomeFragment : Fragment() {
 
         val bookArticle = root.findViewById<FloatingActionButton>(R.id.newArticle)
         val calculatePostage = root.findViewById<CardView>(R.id.postage)
+        val availability = root.findViewById<CardView>(R.id.available_card)
+        val popending = root.findViewById<CardView>(R.id.pending_card)
+        val intransit = root.findViewById<CardView>(R.id.intransit_card)
+        val underprocess = root.findViewById<CardView>(R.id.underprocess_card)
+        val customs = root.findViewById<CardView>(R.id.custom_card)
+        val customscleared = root.findViewById<CardView>(R.id.cleared_card)
+        val deliveredcard = root.findViewById<CardView>(R.id.delivered_card)
+
+
 
         calculatePostage.setOnClickListener {
             Navigation.findNavController(root)
@@ -42,6 +51,36 @@ class HomeFragment : Fragment() {
             Navigation.findNavController(root)
                 .navigate(R.id.action_navigation_home_to_bookArticle)
         }
+        availability.setOnClickListener{
+            Navigation.findNavController(root)
+                .navigate(R.id.action_navigation_home_to_availableCountry)
+        }
+        popending.setOnClickListener {
+            Navigation.findNavController(root)
+                .navigate(R.id.action_navigation_home_to_poTransit)
+        }
+        intransit.setOnClickListener {
+            Navigation.findNavController(root)
+                .navigate(R.id.action_navigation_home_to_inTransit)
+        }
+        underprocess.setOnClickListener {
+            Navigation.findNavController(root)
+                .navigate(R.id.action_navigation_home_to_underProcess)
+        }
+        customs.setOnClickListener {
+            Navigation.findNavController(root)
+                .navigate(R.id.action_navigation_home_to_custom2)
+        }
+        customscleared.setOnClickListener {
+            Navigation.findNavController(root)
+                .navigate(R.id.action_navigation_home_to_customCleared)
+        }
+        deliveredcard.setOnClickListener {
+            Navigation.findNavController(root)
+                .navigate(R.id.action_navigation_home_to_delivered)
+        }
+
+
 
 
         return root

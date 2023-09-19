@@ -16,6 +16,27 @@
         <action
             android:id="@+id/action_navigation_home_to_bookArticle"
             app:destination="@id/bookArticle" />
+        <action
+            android:id="@+id/action_navigation_home_to_availableCountry"
+            app:destination="@id/availableCountry" />
+        <action
+            android:id="@+id/action_navigation_home_to_poTransit"
+            app:destination="@id/poTransit" />
+        <action
+            android:id="@+id/action_navigation_home_to_inTransit"
+            app:destination="@id/inTransit" />
+        <action
+            android:id="@+id/action_navigation_home_to_underProcess"
+            app:destination="@id/underProcess" />
+        <action
+            android:id="@+id/action_navigation_home_to_custom2"
+            app:destination="@id/custom2" />
+        <action
+            android:id="@+id/action_navigation_home_to_customCleared"
+            app:destination="@id/customCleared" />
+        <action
+            android:id="@+id/action_navigation_home_to_delivered"
+            app:destination="@id/delivered" />
     </fragment>
 
     <fragment
@@ -70,4 +91,39 @@
             android:id="@+id/action_trackingFragment_to_articleDetails"
             app:destination="@id/articleDetails" />
     </fragment>
+    <fragment
+        android:id="@+id/availableCountry"
+        android:name="com.hindu.dgniryat.Fragments.AvailableCountry.AvailableCountry"
+        android:label="fragment_available_country"
+        tools:layout="@layout/fragment_available_country" />
+    <fragment
+        android:id="@+id/poTransit"
+        android:name="com.hindu.dgniryat.Fragments.PoTransit.PoTransit"
+        android:label="fragment_po_transit"
+        tools:layout="@layout/fragment_po_transit" />
+    <fragment
+        android:id="@+id/inTransit"
+        android:name="com.hindu.dgniryat.Fragments.InTransit.InTransit"
+        android:label="fragment_in_transit"
+        tools:layout="@layout/fragment_in_transit" />
+    <fragment
+        android:id="@+id/underProcess"
+        android:name="com.hindu.dgniryat.Fragments.UnderProcess.UnderProcess"
+        android:label="fragment_under_process"
+        tools:layout="@layout/fragment_under_process" />
+    <fragment
+        android:id="@+id/custom2"
+        android:name="com.hindu.dgniryat.Fragments.Customs.Custom"
+        android:label="fragment_custom"
+        tools:layout="@layout/fragment_custom" />
+    <fragment
+        android:id="@+id/customCleared"
+        android:name="com.hindu.dgniryat.Fragments.CustomCleared.CustomCleared"
+        android:label="fragment_custom_cleared"
+        tools:layout="@layout/fragment_custom_cleared" />
+    <fragment
+        android:id="@+id/delivered"
+        android:name="com.hindu.dgniryat.Fragments.Delivered.Delivered"
+        android:label="fragment_delivered"
+        tools:layout="@layout/fragment_delivered" />
 </navigation>
