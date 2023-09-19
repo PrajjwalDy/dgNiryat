@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Fragments.TrackingFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/appBar_text_book_article"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="10dp"
+                android:text="Track Atrticle"
+                android:fontFamily="@font/fredoka"
+                android:textColor="@color/red"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/articleName_track"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Atricle Name"
+            android:layout_margin="10dp"
+            android:textSize="18sp"
+            android:fontFamily="@font/fredoka"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/orderNo_track"
+            android:layout_below="@+id/articleName_track"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Order No."
+            android:layout_marginStart="10dp"
+            android:textSize="16sp"
+            android:fontFamily="@font/fredoka"/>
+
+        <TextView
+            android:id="@+id/detailsTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Details"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="10dp"
+            android:fontFamily="@font/fredoka"
+            android:textColor="@color/blue"/>
+
+    </RelativeLayout>
+
+
+
+
+
+
+</LinearLayout>

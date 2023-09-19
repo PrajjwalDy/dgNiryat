@@ -74,6 +74,8 @@ class BookArticle : Fragment() {
         city = root.findViewById<EditText>(R.id.city)
         receiverPhone = root.findViewById<EditText>(R.id.receiverPhone)
         receiverEmail = root.findViewById<EditText>(R.id.receiverEmail)
+        val receiverCountry = root.findViewById<EditText>(R.id.receiver_country)
+
 
 
         //Spinners
@@ -100,6 +102,7 @@ class BookArticle : Fragment() {
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
                 val selectedItem = countries[p2]
                 selectedCountry = selectedItem
+                receiverCountry.setText(selectedItem)
             }
 
             override fun onNothingSelected(p0: AdapterView<*>?) {
@@ -127,6 +130,7 @@ class BookArticle : Fragment() {
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
                 val selectedItem = products[p2]
                 selectedProductType = selectedItem
+
             }
 
             override fun onNothingSelected(p0: AdapterView<*>?) {
@@ -215,8 +219,9 @@ class BookArticle : Fragment() {
             receiverDetails.visibility = View.VISIBLE
         }
 
-
-
+        proceedbtn2.setOnClickListener {
+            saveData(root)
+        }
 
 
         return root
@@ -250,9 +255,9 @@ class BookArticle : Fragment() {
         val dbRef = FirebaseDatabase.getInstance().reference.child("Consignments")
 
         val orderMap = HashMap<String, Any>()
-        orderMap["receiverName"] = receiverName
-        orderMap["receiverAddress"] = "$addressLine1 +$addressLine2"
-        orderMap["country"] = ""
+        orderMap["receiverName"] = receiverName.text.toString()
+        orderMap["receiverAddress"] = "${addressLine1.text} +${addressLine2.text}"
+        orderMap["country"] = selectedCountry
         orderMap["city"] = city.text.toString()
         orderMap["rPhone"] = receiverPhone.text.toString()
         orderMap["rEmail"] = receiverEmail.text.toString()

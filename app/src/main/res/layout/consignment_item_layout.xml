@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="7pt"
+    app:cardElevation="5pt"
+    android:layout_marginStart="5dp"
+    android:layout_marginEnd="5dp"
+    android:layout_marginTop="5dp"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/basicDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:layout_centerVertical="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/orderName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ArticleName"
+                android:layout_margin="10dp"
+                android:textColor="@color/red"
+                android:fontFamily="@font/fredoka"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:maxLength="200"
+                android:maxLines="1"/>
+
+            <TextView
+                android:id="@+id/toCounty_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:text="to: Country"
+                android:layout_marginStart="10dp"
+                android:textColor="@color/black"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/fredoka"/>
+
+            <TextView
+                android:id="@+id/productType_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:text="Product Type"
+                android:layout_marginStart="10dp"
+                android:textColor="@color/black"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/fredoka"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="20dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Status"
+                android:fontFamily="@font/fredoka"
+                android:textColor="@color/blue"/>
+
+            <ImageView
+                android:id="@+id/statusImage"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:src="@drawable/under_process"/>
+
+            <TextView
+                android:id="@+id/status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Under Process"
+                android:fontFamily="@font/fredoka"
+                android:textColor="@color/black"/>
+
+
+
+
+        </LinearLayout>
+
+
+
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

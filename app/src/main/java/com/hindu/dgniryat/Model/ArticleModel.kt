@@ -13,4 +13,5 @@ class ArticleModel {
     val InvCount:String? = null
     val certificateCount:String? = null
     val pbe:String? = null
+    val status:String? = null
 }

@@ -1,5 +1,6 @@
 package com.hindu.dgniryat.Fragments
 
+import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.Color
 import android.os.Bundle
@@ -22,6 +23,8 @@ import com.hindu.dgniryat.R
 
 class ArticleDetails : Fragment() {
 
+    private lateinit var orderId:String
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -29,15 +32,26 @@ class ArticleDetails : Fragment() {
         // Inflate the layout for this fragment
         val root: View = inflater.inflate(R.layout.fragment_article_details, container, false)
 
+        val pref = context?.getSharedPreferences("PREFS", Context.MODE_PRIVATE)
+        if (pref != null){
+            this.orderId = pref.getString("orderId","none")!!
+        }
+
         val imageView = root.findViewById<ImageView>(R.id.barcodeImage)
         val articleName = root.findViewById<TextView>(R.id.articleName_Details)
         val orderNo = root.findViewById<TextView>(R.id.orderNo_details)
         val productType = root.findViewById<TextView>(R.id.productType_details)
         val typeCount = root.findViewById<TextView>(R.id.no_of_types_detils)
         val nonDelivery = root.findViewById<TextView>(R.id.non_delivery_details)
+        val country = root.findViewById<TextView>(R.id.toCountry_details)
+        val itemCategory = root.findViewById<TextView>(R.id.itemCategory_details)
 
 
-        generateBarcode()
+        setBitmap(imageView,orderId)
+
+        orderNo.text = orderId
+
+        getData(orderId,country,articleName,nonDelivery,typeCount,productType,itemCategory)
 
         return root
     }
