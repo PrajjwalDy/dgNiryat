@@ -15,6 +15,7 @@ import android.widget.ScrollView
 import android.widget.Spinner
 import androidx.appcompat.widget.AppCompatButton
 import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.ktx.Firebase
 import com.hindu.dgniryat.R
@@ -253,6 +254,7 @@ class BookArticle : Fragment() {
 
     private fun receiverData(view:View, orderId: String) {
         val dbRef = FirebaseDatabase.getInstance().reference.child("Consignments")
+            .child(FirebaseAuth.getInstance().currentUser!!.uid)
 
         val orderMap = HashMap<String, Any>()
         orderMap["receiverName"] = receiverName.text.toString()
