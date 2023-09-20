@@ -247,14 +247,14 @@ class BookArticle : Fragment() {
         orderMap["InvCount"] = invCount.text.toString()
         orderMap["certificateCount"] = certificateCount.text.toString()
         orderMap["pbe"] = selectedPbe
+        orderMap["publisher"] = FirebaseAuth.getInstance().currentUser!!.uid
 
         dbRef.child(orderId).updateChildren(orderMap)
         receiverData(view,orderId)
     }
 
     private fun receiverData(view:View, orderId: String) {
-        val dbRef = FirebaseDatabase.getInstance().reference.child("Consignments")
-            .child(FirebaseAuth.getInstance().currentUser!!.uid)
+        val dbRef = FirebaseDatabase.getInstance().reference.child("Address")
 
         val orderMap = HashMap<String, Any>()
         orderMap["receiverName"] = receiverName.text.toString()

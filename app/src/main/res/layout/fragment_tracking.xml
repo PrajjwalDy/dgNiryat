@@ -23,8 +23,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_margin="10dp"
-                android:text="Track Atrticle"
                 android:fontFamily="@font/fredoka"
+                android:text="Track Atrticle"
                 android:textColor="@color/red"
                 android:textSize="20sp" />
         </LinearLayout>
@@ -40,38 +40,365 @@
             android:id="@+id/articleName_track"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Atricle Name"
             android:layout_margin="10dp"
-            android:textSize="18sp"
             android:fontFamily="@font/fredoka"
-            android:textColor="@color/black"/>
+            android:text="Atricle Name"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/orderNo_track"
-            android:layout_below="@+id/articleName_track"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Order No."
+            android:layout_below="@+id/articleName_track"
             android:layout_marginStart="10dp"
-            android:textSize="16sp"
-            android:fontFamily="@font/fredoka"/>
+            android:fontFamily="@font/fredoka"
+            android:text="Order No."
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/detailsTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Details"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
-            android:layout_margin="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
             android:fontFamily="@font/fredoka"
-            android:textColor="@color/blue"/>
+            android:text="Details"
+            android:textColor="@color/blue"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/underProcess"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/fredoka"
+            android:text="Under Process"
+            android:textColor="@color/blue"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/underProcess"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/fredoka"
+            android:text="At Dakghar" />
+
+        <ImageView
+            android:id="@+id/img_underProcess"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/progress_under_process" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/dp_dakghar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/fredoka"
+            android:text="Dispatched From Dakghar"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/message_dp_dakghar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dp_dakghar"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/fredoka"
+            android:text="" />
+
+        <ImageView
+            android:id="@+id/img_dp_dakghar"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/process_blank" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/exportWarehouse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/fredoka"
+            android:text="Reached Export Warehouse"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/message_exportWarehouse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/exportWarehouse"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/fredoka"
+            android:text="" />
+
+        <ImageView
+            android:id="@+id/img_export_warehouse"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/process_blank" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/exportCustom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/fredoka"
+            android:text="Reached Export Custom"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/message_exportCustom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/exportCustom"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/fredoka"
+            android:text="" />
+
+        <ImageView
+            android:id="@+id/img_export_custom"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/process_blank" />
+
 
     </RelativeLayout>
 
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/ship_warehouse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/fredoka"
+            android:text="Processing at Ship Wareshouse"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/message_shipWarehouse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ship_warehouse"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/fredoka"
+            android:text="" />
+
+        <ImageView
+            android:id="@+id/img_ship_warehouse"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/process_blank" />
 
 
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/import_custom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/fredoka"
+            android:text="Import Custom"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/message_importCustoms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/import_custom"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/fredoka"
+            android:text="" />
+
+        <ImageView
+            android:id="@+id/img_import_custom"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/process_blank" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/import_warehouse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/fredoka"
+            android:text="Import Wareshouse"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/message_import_warehouse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/import_warehouse"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/fredoka"
+            android:text="" />
+
+        <ImageView
+            android:id="@+id/img_import_warehouse"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/process_blank" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/regional_logistic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/fredoka"
+            android:text="At Regional Logistics"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/message_reg_logistics"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/regional_logistic"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/fredoka"
+            android:text="" />
+
+        <ImageView
+            android:id="@+id/img_regional_logistic"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/process_blank" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <TextView
+            android:id="@+id/delivered"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:fontFamily="@font/fredoka"
+            android:text="Delivered"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/message_delivered"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/delivered"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/fredoka"
+            android:text="" />
+
+        <ImageView
+            android:id="@+id/img_delivered"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/delivered_blank" />
+
+
+    </RelativeLayout>
 
 
 </LinearLayout>
