@@ -13,6 +13,12 @@
         android:theme="@style/Theme.DgNiryat"
         tools:targetApi="31">
         <activity
+            android:name=".Activity.BusinessProfile"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.AdminPortal"
+            android:exported="false" />
+        <activity
             android:name=".Activity.AdminSignup"
             android:exported="false" />
         <activity
@@ -38,9 +44,7 @@
             android:exported="false" />
         <activity
             android:name=".Activity.Login"
-            android:exported="true">
-
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="false"
