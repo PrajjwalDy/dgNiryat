@@ -1,5 +1,6 @@
 package com.hindu.dgniryat.Fragments
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -13,6 +14,8 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.hindu.dgniryat.Activity.BusinessProfile
+import com.hindu.dgniryat.Activity.sign_up
 import com.hindu.dgniryat.Model.UserModel
 import com.hindu.dgniryat.R
 import org.w3c.dom.Text
@@ -29,10 +32,18 @@ class ProfileFragment : Fragment() {
         val userName = root.findViewById<TextView>(R.id.userFullName)
         val email = root.findViewById<TextView>(R.id.email_user)
         val phone = root.findViewById<TextView>(R.id.userMobile)
+  val businessview = root.findViewById<TextView>(R.id.waytobusiness)
 
         getData(userName,email,phone)
-        return root
 
+        businessview.setOnClickListener {
+            val intent = Intent(context, BusinessProfile::class.java)
+            startActivity(intent)
+        }
+
+
+
+        return root
     }
     private fun getData(userName:TextView,email:TextView,phone:TextView){
         val dbRef = FirebaseDatabase.getInstance().reference.child("Users")
@@ -52,7 +63,9 @@ class ProfileFragment : Fragment() {
                 TODO("Not yet implemented")
             }
 
+
         })
+
     }
 
 
