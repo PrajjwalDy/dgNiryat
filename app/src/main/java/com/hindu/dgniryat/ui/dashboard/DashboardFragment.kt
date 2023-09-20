@@ -40,9 +40,6 @@ class DashboardFragment : Fragment() {
             consignmentAdapter = context?.let { it1-> ConsignmentAdapter(it1,it) }
             recyclerView!!.adapter = consignmentAdapter
         })
-
-
-
         return root
     }
 

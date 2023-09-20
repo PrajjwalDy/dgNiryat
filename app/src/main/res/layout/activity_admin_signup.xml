@@ -63,18 +63,18 @@
                 android:layout_marginTop="-10dp"
                 android:orientation="vertical">
                 <TextView
-                    android:layout_width="155dp"
+                    android:layout_width="255dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="40dp"
                     android:layout_marginTop="35dp"
                     android:layout_marginEnd="5dp"
-                    android:text="Welcome!"
+                    android:text="Welcome! Admin"
                     android:textColor="@color/red"
                     android:textSize="30dp"
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/fullName_edit_text"
+                    android:id="@+id/adminfullName_edit_text"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_margin="20dp"
@@ -84,7 +84,7 @@
                     android:textColor="@color/red" />
 
                 <EditText
-                    android:id="@+id/email_edit_text"
+                    android:id="@+id/adminemail_edit_text"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginStart="20dp"
@@ -95,7 +95,7 @@
                     android:textColor="@color/red" />
 
                 <EditText
-                    android:id="@+id/phone_number_text"
+                    android:id="@+id/adminphone_number_text"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginStart="20dp"
@@ -108,7 +108,7 @@
                     android:textColor="@color/red" />
 
                 <EditText
-                    android:id="@+id/adminpassword1_Create_AC"
+                    android:id="@+id/adminpassword_Create_AC"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginStart="20dp"
@@ -120,7 +120,7 @@
                     android:textColor="@color/red" />
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/signUp_button"
+                    android:id="@+id/adminsignUp_button"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_gravity="center_horizontal"
@@ -134,7 +134,7 @@
 
 
                 <TextView
-                    android:id="@+id/haveAccount_text"
+                    android:id="@+id/adminhaveAccount_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
