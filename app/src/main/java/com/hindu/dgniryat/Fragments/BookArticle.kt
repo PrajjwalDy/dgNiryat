@@ -16,7 +16,10 @@ import android.widget.Spinner
 import androidx.appcompat.widget.AppCompatButton
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import com.google.firebase.ktx.Firebase
 import com.hindu.dgniryat.R
 
@@ -250,6 +253,7 @@ class BookArticle : Fragment() {
         orderMap["publisher"] = FirebaseAuth.getInstance().currentUser!!.uid
 
         dbRef.child(orderId).updateChildren(orderMap)
+        setStatus(orderId)
         receiverData(view,orderId)
     }
 
@@ -267,6 +271,34 @@ class BookArticle : Fragment() {
 
         dbRef.child(orderId).updateChildren(orderMap)
         Snackbar.make(view, "Article added successfully", Snackbar.LENGTH_SHORT).show()
+
+    }
+
+    private fun setStatus(orderId:String){
+        val dbRef = FirebaseDatabase.getInstance().reference.child("Status")
+
+        val statusMap = HashMap<String,Any>()
+        statusMap["underProcess"] = 1
+        statusMap["dispatchDakghar"] =0
+        statusMap["reachedExportWH"] =0
+        statusMap["exportCustom"] =0
+        statusMap["shipWarehouse"] =0
+        statusMap["importCustom"] =0
+        statusMap["importWarehouse"] =0
+        statusMap["regionalLogistics"] =0
+        statusMap["delivered"] =0
+
+        statusMap["message_dg"] = ""
+        statusMap["message_ew"] = ""
+        statusMap["message_ec"] = ""
+        statusMap["message_sw"] = ""
+        statusMap["message_ic"] = ""
+        statusMap["message_iw"] = ""
+        statusMap["message_rl"] = ""
+
+
+
+        dbRef.child(orderId).updateChildren(statusMap)
 
     }
 }
