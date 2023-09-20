@@ -62,5 +62,13 @@ dependencies {
     implementation ("com.journeyapps:zxing-android-embedded:4.3.0")
 
     implementation("com.razorpay:checkout:1.6.33")
+    implementation("com.google.zxing:core:3.5.2")
+
+    implementation("com.google.mlkit:barcode-scanning:17.2.0")
+    implementation("com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.0")
+
+
+    implementation("com.google.android.gms:play-services-vision:20.1.3")
+
 
 }

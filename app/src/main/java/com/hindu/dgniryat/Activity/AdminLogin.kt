@@ -30,7 +30,7 @@ class AdminLogin : AppCompatActivity() {
         adminpassword = findViewById<EditText>(id.adminpasswordsignin_txt)
 
         adminlogin_bttn.setOnClickListener {
-            AdminLogin()
+            adminLogin()
         }
         admincreate_account.setOnClickListener {
             val intent = Intent(this, AdminSignup::class.java)
@@ -74,7 +74,7 @@ class AdminLogin : AppCompatActivity() {
                                     if (user!!.isEmailVerified) {
                                         progressDialog.dismiss()
                                         val intent =
-                                            Intent(this@AdminLogin, MainActivity::class.java)
+                                            Intent(this@AdminLogin, AdminPortal::class.java)
                                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
                                         startActivity(intent)
                                         Toast.makeText(
@@ -107,7 +107,7 @@ class AdminLogin : AppCompatActivity() {
 
         val user: FirebaseUser? = FirebaseAuth.getInstance().currentUser
         if (user != null) {
-            startActivity(Intent(this, MainActivity::class.java))
+            startActivity(Intent(this, AdminPortal::class.java))
         }
     }
 }

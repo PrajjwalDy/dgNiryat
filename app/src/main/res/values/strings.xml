@@ -29,6 +29,18 @@
 
     </string-array>
 
+    <string-array name="Level">
+        <item>Dakghar</item>
+        <item>Export Warehouse</item>
+        <item>Export Custom</item>
+        <item>Ship Warehouse</item>
+        <item>Import Custom</item>
+        <item>Import Warehouse</item>
+        <item>Regional Logistics</item>
+        <item>Delivered</item>
+
+    </string-array>
+
     <string-array name="ItemCategory">
         <item>Select Item Category</item>
         <item>Commercial Sample</item>

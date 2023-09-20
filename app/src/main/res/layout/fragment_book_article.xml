@@ -66,15 +66,6 @@
                 android:background="@drawable/edit_text_bg" />
 
 
-            <TextView
-                android:id="@+id/serviceAvailability"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:text="Service Availability"
-                android:textSize="16sp" />
-
-
             <Spinner
                 android:id="@+id/productType"
                 android:layout_width="match_parent"
@@ -107,6 +98,7 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="5dp"
                     android:layout_weight="1"
+                    android:textSize="14sp"
                     android:background="@drawable/edit_text_bg"
                     android:hint="No. of types of item"
                     android:padding="5pt" />
@@ -118,6 +110,7 @@
                     android:layout_marginStart="5dp"
                     android:layout_marginEnd="10dp"
                     android:layout_weight="1"
+                    android:textSize="14sp"
                     android:background="@drawable/edit_text_bg"
                     android:hint="Gross Weight(GMS)"
                     android:padding="5pt" />

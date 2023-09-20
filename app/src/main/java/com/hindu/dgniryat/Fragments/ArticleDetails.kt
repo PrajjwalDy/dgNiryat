@@ -84,7 +84,7 @@ class ArticleDetails : Fragment() {
     }
 
     private fun setBitmap(imageView: ImageView, barcodeData: String) {
-        val barcodeWidth = 400
+        val barcodeWidth = 800
         val barcodeHeight = 200
 
         val barcodeBitmap = generateBarcode(barcodeData, barcodeWidth, barcodeHeight)

@@ -18,9 +18,11 @@ class welcome : AppCompatActivity() {
 
         userbutton.setOnClickListener {
            startActivity(Intent(this, Login::class.java))
+            finish()
         }
         adminbutton.setOnClickListener {
             startActivity(Intent(this, AdminLogin::class.java))
+            finish()
         }
 
     }
