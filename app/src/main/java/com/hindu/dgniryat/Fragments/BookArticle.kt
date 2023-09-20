@@ -13,7 +13,12 @@ import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.ScrollView
 import android.widget.Spinner
+import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.widget.AppCompatButton
+import androidx.cardview.widget.CardView
+import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
@@ -46,6 +51,11 @@ class BookArticle : Fragment() {
     var selectedReturn = ""
     var selectedPbe = ""
 
+    //Payment
+    private lateinit var totalAmount:TextView
+    private lateinit var countryCharge:TextView
+    private lateinit var weightCharge:TextView
+    private lateinit var gstCharge:TextView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -61,6 +71,7 @@ class BookArticle : Fragment() {
         //Layout
         val articleDetails = root.findViewById<ScrollView>(R.id.LL_articleDetails)
         val receiverDetails = root.findViewById<ScrollView>(R.id.ll_receiverDetails)
+        val paymentCardView = root.findViewById<CardView>(R.id.paymentCV)
 
         //objects
         orderName = root.findViewById<EditText>(R.id.ariticleName)
@@ -88,6 +99,16 @@ class BookArticle : Fragment() {
         val itemCategory = root.findViewById<Spinner>(R.id.itemCategory)
         val nonDelivery = root.findViewById<Spinner>(R.id.non_delivery)
         val pbe = root.findViewById<Spinner>(R.id.selectPBE)
+
+
+        //Payment
+        totalAmount = root.findViewById(R.id.amount)
+        countryCharge = root.findViewById(R.id.countryCharge_amount)
+        weightCharge = root.findViewById(R.id.weightCharge_amount)
+        gstCharge = root.findViewById(R.id.gstCharge_amount)
+
+        val payButton =root.findViewById<AppCompatButton>(R.id.confirmPay)
+
 
 
         //Select Country
@@ -224,6 +245,12 @@ class BookArticle : Fragment() {
         }
 
         proceedbtn2.setOnClickListener {
+            receiverDetails.visibility = View.GONE
+            paymentCardView.visibility = View.VISIBLE
+            calculatePostage()
+        }
+
+        payButton.setOnClickListener {
             saveData(root)
         }
 
@@ -255,6 +282,8 @@ class BookArticle : Fragment() {
         dbRef.child(orderId).updateChildren(orderMap)
         setStatus(orderId)
         receiverData(view,orderId)
+        Navigation.findNavController(view).navigate(R.id.action_bookArticle_to_navigation_dashboard)
+        Toast.makeText(context,"Payment Success & Article Added", Toast.LENGTH_SHORT).show()
     }
 
     private fun receiverData(view:View, orderId: String) {
@@ -299,6 +328,73 @@ class BookArticle : Fragment() {
 
 
         dbRef.child(orderId).updateChildren(statusMap)
+
+    }
+
+    private fun calculatePostage(){
+        var cCharge = 0
+        var totalCharge =0
+        var weightamount = weight.text.toString().toInt()
+        var weightCharge = (weightamount/1000)*750
+        var gst = 0
+
+
+        if (selectedCountry == "USA"){
+            cCharge = 50000
+            var grossAmount = cCharge+weightCharge
+            gst = grossAmount*18/100
+            totalCharge = gst+grossAmount
+
+            totalAmount.text = totalCharge.toString()
+            gstCharge.text = gst.toString()
+            countryCharge.text = cCharge.toString()
+
+        }
+
+        if (selectedCountry =="England"){
+            cCharge = 30000
+            var grossAmount = cCharge+weightCharge
+            gst = grossAmount*18/100
+            totalCharge = gst+grossAmount
+
+            totalAmount.text = totalCharge.toString()
+            gstCharge.text = gst.toString()
+            countryCharge.text = cCharge.toString()
+        }
+
+        if (selectedCountry =="France"){
+            cCharge = 45000
+            var grossAmount = cCharge+weightCharge
+            gst = grossAmount*18/100
+            totalCharge = gst+grossAmount
+
+            totalAmount.text = totalCharge.toString()
+            gstCharge.text = gst.toString()
+            countryCharge.text = cCharge.toString()
+        }
+
+        if (selectedCountry =="Russia"){
+            cCharge = 20000
+            var grossAmount = cCharge+weightCharge
+            gst = grossAmount*18/100
+            totalCharge = gst+grossAmount
+
+            totalAmount.text = totalCharge.toString()
+            gstCharge.text = gst.toString()
+            countryCharge.text = cCharge.toString()
+        }
+
+        if (selectedCountry =="Japan"){
+            cCharge = 25000
+            var grossAmount = cCharge+weightCharge
+            gst = grossAmount*18/100
+            totalCharge = gst+grossAmount
+
+            totalAmount.text = totalCharge.toString()
+            gstCharge.text = gst.toString()
+            countryCharge.text = cCharge.toString()
+        }
+
 
     }
 }

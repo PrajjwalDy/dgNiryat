@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".Fragments.BookArticle">
 
@@ -24,6 +25,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_margin="10dp"
                 android:text="Book Article"
+                android:fontFamily="@font/fredoka"
                 android:textColor="@color/red"
                 android:textSize="20sp" />
         </LinearLayout>
@@ -330,6 +332,171 @@
         </LinearLayout>
 
     </ScrollView>
+    
+    <androidx.cardview.widget.CardView
+        android:id="@+id/paymentCV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:cardCornerRadius="7pt"
+        android:visibility="gone"
+        android:elevation="5pt">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pay"
+                android:fontFamily="@font/fredoka"
+                android:textSize="30dp"
+                android:textColor="@color/blue"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="5dp"/>
+
+            <TextView
+                android:id="@+id/amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0000.00"
+                android:layout_gravity="center_horizontal"
+                android:textSize="35sp"
+                android:layout_margin="10dp"
+                android:textColor="@color/red"
+                android:fontFamily="@font/fredoka"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Charge Breakdown"
+                android:layout_margin="10dp"
+                android:textColor="@color/blue"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/fredoka"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/fredoka"
+                    android:text="Country Charge:"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/countryCharge_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="20dp"
+                    android:fontFamily="@font/fredoka"
+                    android:textColor="@color/blue"
+                    android:layout_marginBottom="5dp"
+                    android:text="0.00"
+                    android:textSize="16sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/fredoka"
+                    android:text="Weight Charge:"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/weightCharge_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="20dp"
+                    android:fontFamily="@font/fredoka"
+                    android:textColor="@color/blue"
+                    android:layout_marginBottom="5dp"
+                    android:text="0.00"
+                    android:textSize="16sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/fredoka"
+                    android:text="GST"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/gstCharge_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="20dp"
+                    android:fontFamily="@font/fredoka"
+                    android:textColor="@color/blue"
+                    android:layout_marginBottom="5dp"
+                    android:text="0.00"
+                    android:textSize="16sp" />
+
+            </RelativeLayout>
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/confirmPay"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:background="@drawable/signinbutton_bg"
+                android:layout_margin="20dp"
+                android:layout_gravity="center_horizontal"
+                android:text="Pay"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:fontFamily="@font/fredoka"
+                android:textSize="16sp"/>
+
+
+
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
 
 
 </LinearLayout>
