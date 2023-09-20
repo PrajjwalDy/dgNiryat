@@ -16,6 +16,7 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.hindu.dgniryat.Activity.BusinessProfile
 import com.hindu.dgniryat.Activity.sign_up
+import com.hindu.dgniryat.Activity.welcome
 import com.hindu.dgniryat.Model.UserModel
 import com.hindu.dgniryat.R
 import org.w3c.dom.Text
@@ -27,31 +28,37 @@ class ProfileFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val root:View =inflater.inflate(R.layout.fragment_profile, container, false)
+        val root: View = inflater.inflate(R.layout.fragment_profile, container, false)
 
         val userName = root.findViewById<TextView>(R.id.userFullName)
         val email = root.findViewById<TextView>(R.id.email_user)
         val phone = root.findViewById<TextView>(R.id.userMobile)
-  val businessview = root.findViewById<TextView>(R.id.waytobusiness)
-
-        getData(userName,email,phone)
+        val businessview = root.findViewById<TextView>(R.id.waytobusiness)
+        val loggingout = root.findViewById<TextView>(R.id.logout)
+        getData(userName, email, phone)
 
         businessview.setOnClickListener {
             val intent = Intent(context, BusinessProfile::class.java)
             startActivity(intent)
         }
 
-
+        loggingout.setOnClickListener {
+            FirebaseAuth.getInstance().signOut()
+            val intent = Intent(context, welcome::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
+            startActivity(intent)
+        }
 
         return root
     }
-    private fun getData(userName:TextView,email:TextView,phone:TextView){
+
+    private fun getData(userName: TextView, email: TextView, phone: TextView) {
         val dbRef = FirebaseDatabase.getInstance().reference.child("Users")
             .child(FirebaseAuth.getInstance().currentUser!!.uid)
 
-        dbRef.addValueEventListener(object :ValueEventListener{
+        dbRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                if (snapshot.exists()){
+                if (snapshot.exists()) {
                     val data = snapshot.getValue(UserModel::class.java)
                     userName.text = data?.fullName
                     email.text = data?.Email

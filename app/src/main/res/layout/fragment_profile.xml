@@ -32,11 +32,14 @@
                 android:id="@+id/logout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
                 android:layout_gravity="center_vertical"
-                android:layout_margin="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
                 android:fontFamily="@font/fredoka"
                 android:text="Logout"
-                android:layout_alignParentEnd="true"
                 android:textColor="@color/blue"
                 android:textSize="20sp" />
         </RelativeLayout>
