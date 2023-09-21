@@ -189,7 +189,7 @@ class AdminPortal : AppCompatActivity() {
         }
 
         if (selectedLevel == "Ship Warehouse"){
-            statusMap["exportCustom"] = 1
+            statusMap["shipWarehouse"] = 1
             db.updateChildren(statusMap)
         }
 

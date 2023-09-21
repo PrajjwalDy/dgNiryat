@@ -26,6 +26,7 @@
                 android:textSize="20sp" />
         </LinearLayout>
     </com.google.android.material.appbar.AppBarLayout>
+
     <androidx.cardview.widget.CardView
         android:id="@+id/productord"
         android:layout_width="match_parent"
