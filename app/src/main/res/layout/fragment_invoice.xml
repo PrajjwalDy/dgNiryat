@@ -114,6 +114,7 @@
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
     <androidx.cardview.widget.CardView
+        android:id="@+id/inv_cv2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:elevation="10dp"
@@ -197,6 +198,7 @@
         android:elevation="10dp"
         app:cardCornerRadius="10dp">
         <RelativeLayout
+            android:id="@+id/inv_cv3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"

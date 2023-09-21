@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     tools:context=".Fragments.UnderProcess.UnderProcess">
 
-<com.google.android.material.appbar.AppBarLayout
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@color/white">
@@ -14,114 +16,122 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <TextView
                 android:id="@+id/appBar_text_book_article"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_margin="10dp"
-                android:text="PO Pending"
                 android:fontFamily="@font/fredoka"
+                android:text="PO Pending"
                 android:textColor="@color/red"
                 android:textSize="20sp" />
         </LinearLayout>
     </com.google.android.material.appbar.AppBarLayout>
-<androidx.cardview.widget.CardView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:elevation="10dp"
-    app:cardCornerRadius="10dp">
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:background="@color/material_dynamic_neutral90">
-        <LinearLayout
-            android:id="@+id/basicDetails"
-            android:layout_width="wrap_content"
-            android:layout_height="150dp"
-            android:layout_centerVertical="true"
-            android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/orderName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Minerals"
-                android:layout_margin="10dp"
-                android:textColor="@color/red"
-                android:fontFamily="@font/fredoka"
-                android:textStyle="bold"
-                android:textSize="18sp"
-                android:maxLength="200"
-                android:maxLines="1"/>
-
-            <TextView
-                android:id="@+id/toCounty_layout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:text="to: Japan"
-                android:layout_marginStart="10dp"
-                android:textColor="@color/black"
-                android:layout_marginBottom="10dp"
-                android:fontFamily="@font/fredoka"/>
-
-            <TextView
-                android:id="@+id/productType_layout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:text="Raw Material"
-                android:layout_marginStart="10dp"
-                android:textColor="@color/black"
-                android:layout_marginBottom="10dp"
-                android:fontFamily="@font/fredoka"/>
-
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_margin="20dp"
-            android:gravity="center_horizontal"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Status"
-                android:fontFamily="@font/fredoka"
-                android:textColor="@color/blue"/>
-
-            <ImageView
-                android:id="@+id/statusImage"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_margin="5dp"
-                android:src="@drawable/clock"/>
-
-            <TextView
-                android:id="@+id/status"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="PO pending"
-                android:fontFamily="@font/fredoka"
-                android:textColor="@color/black"/>
-        </LinearLayout>
-    </RelativeLayout>
-</androidx.cardview.widget.CardView>
     <androidx.cardview.widget.CardView
+        app:cardCornerRadius="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:elevation="10dp"
-        app:cardCornerRadius="10dp">
+        android:elevation="10dp">
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:background="@color/material_dynamic_neutral90">
+
+            <LinearLayout
+                android:id="@+id/basicDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:layout_centerVertical="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/orderName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:fontFamily="@font/fredoka"
+                    android:maxLength="200"
+                    android:maxLines="1"
+                    android:text="Minerals"
+                    android:textColor="@color/red"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/toCounty_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/fredoka"
+                    android:text="to: Japan"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/productType_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/fredoka"
+                    android:text="Raw Material"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="20dp"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/fredoka"
+                    android:text="Status"
+                    android:textColor="@color/blue" />
+
+                <ImageView
+                    android:id="@+id/statusImage"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/under_process" />
+
+                <TextView
+                    android:id="@+id/status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/fredoka"
+                    android:text="PO pending"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        app:cardCornerRadius="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@color/material_dynamic_neutral90">
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="150dp"
@@ -131,37 +141,38 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:fontFamily="@font/fredoka"
+                    android:maxLength="200"
+                    android:maxLines="1"
                     android:text="Ornaments"
-                    android:layout_margin="10dp"
                     android:textColor="@color/red"
-                    android:fontFamily="@font/fredoka"
-                    android:textStyle="bold"
                     android:textSize="18sp"
-                    android:maxLength="200"
-                    android:maxLines="1"/>
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="16sp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/fredoka"
                     android:text="to: USA"
-                    android:layout_marginStart="10dp"
                     android:textColor="@color/black"
-                    android:layout_marginBottom="10dp"
-                    android:fontFamily="@font/fredoka"/>
+                    android:textSize="16sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:text="Raw Material"
                     android:layout_marginStart="10dp"
-                    android:textColor="@color/black"
                     android:layout_marginBottom="10dp"
-                    android:fontFamily="@font/fredoka"/>
+                    android:fontFamily="@font/fredoka"
+                    android:text="Raw Material"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
 
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -173,33 +184,38 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Status"
                     android:fontFamily="@font/fredoka"
-                    android:textColor="@color/blue"/>
+                    android:text="Status"
+                    android:textColor="@color/blue" />
+
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_margin="5dp"
-                    android:src="@drawable/clock"/>
+                    android:src="@drawable/under_process" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="PO pending"
                     android:fontFamily="@font/fredoka"
-                    android:textColor="@color/black"/>
+                    android:text="PO pending"
+                    android:textColor="@color/black" />
             </LinearLayout>
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
+
     <androidx.cardview.widget.CardView
+        app:cardCornerRadius="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:elevation="10dp"
-        app:cardCornerRadius="10dp">
+        android:elevation="10dp">
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:background="@color/material_dynamic_neutral90">
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="150dp"
@@ -209,37 +225,38 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Gold"
                     android:layout_margin="10dp"
-                    android:textColor="@color/red"
                     android:fontFamily="@font/fredoka"
-                    android:textStyle="bold"
-                    android:textSize="18sp"
                     android:maxLength="200"
-                    android:maxLines="1"/>
+                    android:maxLines="1"
+                    android:text="Gold"
+                    android:textColor="@color/red"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="16sp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/fredoka"
                     android:text="to: England"
-                    android:layout_marginStart="10dp"
                     android:textColor="@color/black"
-                    android:layout_marginBottom="10dp"
-                    android:fontFamily="@font/fredoka"/>
+                    android:textSize="16sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:text="Raw Material"
                     android:layout_marginStart="10dp"
-                    android:textColor="@color/black"
                     android:layout_marginBottom="10dp"
-                    android:fontFamily="@font/fredoka"/>
+                    android:fontFamily="@font/fredoka"
+                    android:text="Raw Material"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
 
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -251,24 +268,25 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Status"
                     android:fontFamily="@font/fredoka"
-                    android:textColor="@color/blue"/>
+                    android:text="Status"
+                    android:textColor="@color/blue" />
+
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_margin="5dp"
-                    android:src="@drawable/clock"/>
+                    android:src="@drawable/under_process" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="PO pending"
                     android:fontFamily="@font/fredoka"
-                    android:textColor="@color/black"/>
+                    android:text="PO pending"
+                    android:textColor="@color/black" />
             </LinearLayout>
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 
 
-
-</FrameLayout>
+</LinearLayout>
