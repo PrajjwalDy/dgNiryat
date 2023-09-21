@@ -34,6 +34,7 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
+                    android:visibility="gone"
                     android:backgroundTint="@color/lightred"
                     android:layout_toStartOf="@id/searchIcon"
                     android:hint="Search with Article No."
@@ -43,6 +44,7 @@
                 <ImageView
                     android:id="@+id/searchIcon"
                     android:layout_width="35dp"
+                    android:visibility="gone"
                     android:layout_height="35dp"
                     android:src="@drawable/search"
                     android:layout_alignParentEnd="true"
@@ -54,7 +56,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="20dp"
+
                 android:orientation="horizontal">
 
 

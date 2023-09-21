@@ -1,7 +1,12 @@
 package com.hindu.dgniryat.Fragments
 
+import android.app.PendingIntent
 import android.content.BroadcastReceiver
+import android.content.Context
+import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Bundle
+import android.telephony.SmsManager
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -17,16 +22,15 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.widget.AppCompatButton
 import androidx.cardview.widget.CardView
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
-import com.google.firebase.ktx.Firebase
 import com.hindu.dgniryat.R
+import java.io.IOException
 
 class BookArticle : Fragment() {
 
@@ -56,6 +60,8 @@ class BookArticle : Fragment() {
     private lateinit var countryCharge:TextView
     private lateinit var weightCharge:TextView
     private lateinit var gstCharge:TextView
+
+    private val SMS_PERMISSION_REQUEST_CODE = 123
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -250,6 +256,23 @@ class BookArticle : Fragment() {
             calculatePostage()
         }
 
+
+
+
+        if (ContextCompat.checkSelfPermission(requireContext(),android.Manifest.permission.SEND_SMS) !=PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(
+                requireActivity(),
+                arrayOf(android.Manifest.permission.SEND_SMS),
+                SMS_PERMISSION_REQUEST_CODE
+            )
+
+        }else{
+
+
+
+        }
+
+
         payButton.setOnClickListener {
             saveData(root)
         }
@@ -282,6 +305,18 @@ class BookArticle : Fragment() {
         dbRef.child(orderId).updateChildren(orderMap)
         setStatus(orderId)
         receiverData(view,orderId)
+        val message = "Dear user your Article is booked for $selectedCategory with ORDER NO. $orderId, Thank you for choosing Dakghar Niryat Kendra"
+        if (ContextCompat.checkSelfPermission(requireContext(),android.Manifest.permission.SEND_SMS) !=PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(
+                requireActivity(),
+                arrayOf(android.Manifest.permission.SEND_SMS),
+                SMS_PERMISSION_REQUEST_CODE
+            )
+
+        }else{
+            sendSms(message)
+
+        }
         Navigation.findNavController(view).navigate(R.id.action_bookArticle_to_navigation_dashboard)
         Toast.makeText(context,"Payment Success & Article Added", Toast.LENGTH_SHORT).show()
     }
@@ -396,5 +431,23 @@ class BookArticle : Fragment() {
         }
 
 
+    }
+
+    private fun sendSms(message:String){
+        val smsManager = SmsManager.getDefault()
+        val sentIntent = Intent("SMS_SENT")
+        val deliveredIntent = Intent("SMS_DELIVERED")
+
+        val sentPI = PendingIntent.getBroadcast(context, 0, sentIntent, PendingIntent.FLAG_IMMUTABLE)
+        val deliveredPI = PendingIntent.getBroadcast(context, 0, deliveredIntent,
+            PendingIntent.FLAG_IMMUTABLE)
+
+
+        try {
+            smsManager.sendTextMessage("9118847494", "7460802449", message, sentPI, deliveredPI)
+        }catch (e:IOException){
+            e.printStackTrace()
+
+        }
     }
 }

@@ -61,7 +61,9 @@
             android:textSize="18sp" />
 
         <ScrollView
+            android:id="@+id/articleDetails_admin_ll"
             android:layout_width="match_parent"
+            android:visibility="gone"
             android:layout_height="match_parent">
 
             <LinearLayout
@@ -282,8 +284,9 @@
                         android:textSize="16sp"
                         android:fontFamily="@font/fredoka"
                         android:layout_marginStart="20dp"
-                        android:textColor="@color/blue"
-                        android:text=""/>
+                        android:textStyle="bold"
+                        android:textColor="#2c6e49"
+                        android:text="Success"/>
 
                 </LinearLayout>
 

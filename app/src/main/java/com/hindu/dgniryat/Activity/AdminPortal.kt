@@ -8,6 +8,7 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.EditText
 import android.widget.ImageView
+import android.widget.ScrollView
 import android.widget.Spinner
 import android.widget.TextView
 import android.widget.Toast
@@ -43,6 +44,9 @@ class AdminPortal : AppCompatActivity() {
     private lateinit var level:Spinner
     private lateinit var reject:AppCompatButton
     private lateinit var approve:AppCompatButton
+    private lateinit var details_ll:ScrollView
+
+    private val SMS_PERMISSION_REQUEST_CODE = 123
 
     private var orderId = ""
     var selectedLevel = ""
@@ -68,6 +72,7 @@ class AdminPortal : AppCompatActivity() {
         level = findViewById(R.id.selectLevel)
         reject = findViewById(R.id.reject)
         approve = findViewById(R.id.approve)
+        details_ll = findViewById(R.id.articleDetails_admin_ll)
 
 
 
@@ -133,7 +138,6 @@ class AdminPortal : AppCompatActivity() {
             }
         }
 
-
     }
 
     private fun loadData(){
@@ -144,6 +148,7 @@ class AdminPortal : AppCompatActivity() {
         database.addValueEventListener(object :ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
                 if (snapshot.exists()){
+                    details_ll.visibility = View.VISIBLE
                     val data = snapshot.getValue(ArticleModel::class.java)
                     orderIdTV.text = data?.orderId
                     toCounty.text = data?.rCountry

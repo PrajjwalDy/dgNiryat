@@ -15,6 +15,7 @@ import android.widget.Spinner
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.widget.AppCompatButton
+import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.getSystemService
 import androidx.navigation.fragment.findNavController
@@ -49,6 +50,8 @@ class PostageCalculation : Fragment() {
         grossWeight = root.findViewById(R.id.grossWeright_cp)
         gstAmount = root.findViewById(R.id.gst_cp)
         estimatedCost = root.findViewById(R.id.estimatedCost)
+        val resultCV = root.findViewById<CardView>(R.id.resultCV)
+
 
         calculate = root.findViewById(R.id.calculator)
 
@@ -79,9 +82,11 @@ class PostageCalculation : Fragment() {
         }
 
         calculate.setOnClickListener {
-            calculatePostage()
+            calculatePostage(resultCV)
             hideKeyboard()
+            weight.text.clear()
             Toast.makeText(context,"Calculation Completed",Toast.LENGTH_SHORT).show()
+
         }
 
         return root
@@ -94,7 +99,7 @@ class PostageCalculation : Fragment() {
     }
 
 
-    private fun calculatePostage() {
+    private fun calculatePostage(result:CardView) {
         var cCharge = 0
         var totalCharge = 0
         var weightamount = weight.text.toString().toInt()
@@ -167,6 +172,8 @@ class PostageCalculation : Fragment() {
             country.text = "Country: $selectedCountry: " + cCharge.toString()
             estimatedCost.text = "Estimated Cost: " + totalCharge.toString()
         }
+
+        result.visibility = View.VISIBLE
 
 
     }
