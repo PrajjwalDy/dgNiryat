@@ -27,6 +27,7 @@
         </LinearLayout>
     </com.google.android.material.appbar.AppBarLayout>
     <androidx.cardview.widget.CardView
+        android:id="@+id/productord"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:elevation="10dp"
@@ -91,7 +92,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Status"
+                    android:text=""
                     android:fontFamily="@font/fredoka"
                     android:textColor="@color/blue"/>
 
@@ -106,7 +107,7 @@
                     android:id="@+id/status"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Invoice"
+                    android:text=""
                     android:fontFamily="@font/fredoka"
                     android:textColor="@color/black"/>
             </LinearLayout>
@@ -173,7 +174,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Status"
+                    android:text=""
                     android:fontFamily="@font/fredoka"
                     android:textColor="@color/blue"/>
                 <ImageView
@@ -184,7 +185,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Invoice"
+                    android:text=""
                     android:fontFamily="@font/fredoka"
                     android:textColor="@color/black"/>
             </LinearLayout>
@@ -251,7 +252,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Status"
+                    android:text=""
                     android:fontFamily="@font/fredoka"
                     android:textColor="@color/blue"/>
                 <ImageView
@@ -262,7 +263,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Invoice"
+                    android:text=""
                     android:fontFamily="@font/fredoka"
                     android:textColor="@color/black"/>
             </LinearLayout>

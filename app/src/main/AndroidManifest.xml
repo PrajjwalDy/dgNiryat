@@ -29,9 +29,12 @@
         android:theme="@style/Theme.DgNiryat"
         tools:targetApi="31">
         <activity
+            android:name=".Activity.Invoice"
+            android:exported="false" />
+        <activity
             android:name=".Activity.BarcodeScan"
             android:exported="false"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Activity.BusinessProfile"
             android:exported="false" />
