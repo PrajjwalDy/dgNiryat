@@ -1,5 +1,6 @@
 package com.hindu.dgniryat.Fragments.Invoice
 
+import android.content.Intent
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.cardview.widget.CardView
+import com.hindu.dgniryat.Activity.Invoice
 import com.hindu.dgniryat.R
 
 class InvoiceFragment : Fragment() {
@@ -25,7 +27,7 @@ class InvoiceFragment : Fragment() {
         val productorde = root.findViewById<CardView>(R.id.productord)
 
         productorde.setOnClickListener {
-
+            startActivity(Intent(context,Invoice::class.java))
         }
 
 

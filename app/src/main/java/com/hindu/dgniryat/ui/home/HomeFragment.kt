@@ -39,6 +39,7 @@ class HomeFragment : Fragment() {
         val customs = root.findViewById<CardView>(R.id.custom_card)
         val customscleared = root.findViewById<CardView>(R.id.cleared_card)
         val deliveredcard = root.findViewById<CardView>(R.id.delivered_card)
+        val invoice = root.findViewById<CardView>(R.id.invoiceCV)
 
 
 
@@ -78,6 +79,11 @@ class HomeFragment : Fragment() {
         deliveredcard.setOnClickListener {
             Navigation.findNavController(root)
                 .navigate(R.id.action_navigation_home_to_delivered)
+        }
+
+        invoice.setOnClickListener {
+            Navigation.findNavController(root)
+                .navigate(R.id.action_navigation_home_to_invoiceFragment2)
         }
 
 

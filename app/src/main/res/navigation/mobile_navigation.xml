@@ -37,6 +37,9 @@
         <action
             android:id="@+id/action_navigation_home_to_delivered"
             app:destination="@id/delivered" />
+        <action
+            android:id="@+id/action_navigation_home_to_invoiceFragment2"
+            app:destination="@id/invoiceFragment2" />
     </fragment>
 
     <fragment
@@ -133,4 +136,8 @@
         android:name="com.hindu.dgniryat.Fragments.Delivered.Delivered"
         android:label="fragment_delivered"
         tools:layout="@layout/fragment_delivered" />
+    <fragment
+        android:id="@+id/invoiceFragment2"
+        android:name="com.hindu.dgniryat.Fragments.Invoice.InvoiceFragment"
+        android:label="InvoiceFragment" />
 </navigation>
