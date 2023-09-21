@@ -6,13 +6,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.cardview.widget.CardView
 import com.hindu.dgniryat.R
 
 class InvoiceFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = InvoiceFragment()
-    }
 
     private lateinit var viewModel: InvoiceViewModel
 
@@ -20,13 +18,19 @@ class InvoiceFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_invoice, container, false)
+        val root: View = inflater.inflate(
+            R.layout.fragment_invoice, container, false
+        )
+
+        val productorde = root.findViewById<CardView>(R.id.productord)
+
+        productorde.setOnClickListener {
+
+        }
+
+
+        return root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(InvoiceViewModel::class.java)
-        // TODO: Use the ViewModel
-    }
 
 }
