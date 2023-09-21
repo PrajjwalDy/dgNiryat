@@ -21,11 +21,17 @@ High Private e-Commerce Portal Charges: Some private e-commerce portals charge h
 **Features:**
 
 Region wise AVAILABILITY
+
 Unique Bar Code-Ease the flow for disposing the flow for disposing a consignment .
+
 Real-Time Tracking System
+
 Dashboard
+
 Centralized system for the small Exporters
+
 User/Business Profile
+
 Integration with Navigation App
 
 
