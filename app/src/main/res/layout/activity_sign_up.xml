@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Activity.sign_up">
+    tools:context=".ui.otherscreen.activity.sign_up">
 
     <ScrollView
         android:layout_width="match_parent"

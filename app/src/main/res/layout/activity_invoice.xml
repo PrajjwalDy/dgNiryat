@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/white">
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -22,163 +25,188 @@
                 android:layout_gravity="center_vertical"
                 android:layout_margin="10dp"
                 android:fontFamily="@font/fredoka"
-                android:text="Invoices"
+                android:text="@string/invoices"
                 android:textColor="@color/red"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
         </LinearLayout>
+
     </com.google.android.material.appbar.AppBarLayout>
 
-
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="3pt"
-        app:cardElevation="3pt">
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="10dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="3dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:padding="16dp">
 
             <TextView
+                android:id="@+id/invoiceCommonTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="10dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/fredoka"
+                android:maxLines="1"
+                android:text="@string/dakghar_niryat_kendra"
+                android:textAlignment="center"
+                android:textColor="@color/red"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/orderIdTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Dakghar Niryat Kendra"
-                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="24dp"
                 android:fontFamily="@font/fredoka"
-                android:layout_margin="10dp"
-                android:textSize="18sp"
-                android:textColor="@color/red"/>
+                android:text="@string/orderid"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/invoiceCommonTitle" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/orderIdTv"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/fredoka"
+                android:text="@string/orderIdNoTxt"
+                android:textColor="@color/blue"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/orderIdTitle"
+                app:layout_constraintStart_toEndOf="@+id/orderIdTitle"
+                app:layout_constraintTop_toTopOf="@+id/orderIdTitle" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="OrderId:"
-                    android:layout_margin="10dp"
-                    android:textSize="16sp"
-                    android:textColor="@color/black"
-                    android:fontFamily="@font/fredoka"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="AZAZ67834y32TYDEL"
-                    android:layout_margin="10dp"
-                    android:textColor="@color/blue"
-                    android:textSize="16sp"
-                    android:fontFamily="@font/fredoka"/>
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/totalWeightTitle"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/fredoka"
+                android:text="@string/total_weight"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/orderIdTitle" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Total Weight:"
-                    android:layout_margin="10dp"
-                    android:textSize="16sp"
-                    android:textColor="@color/black"
-                    android:fontFamily="@font/fredoka"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="50000Gms"
-                    android:layout_margin="10dp"
-                    android:textColor="@color/blue"
-                    android:textSize="16sp"
-                    android:fontFamily="@font/fredoka"/>
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/totalWeightTv"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/fredoka"
+                android:text="@string/totalWeightDummyValue"
+                android:textColor="@color/blue"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/totalWeightTitle"
+                app:layout_constraintStart_toEndOf="@+id/totalWeightTitle"
+                app:layout_constraintTop_toTopOf="@id/totalWeightTitle" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Product Type:"
-                    android:layout_margin="10dp"
-                    android:textSize="16sp"
-                    android:textColor="@color/black"
-                    android:fontFamily="@font/fredoka"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="AZAZ67834y32TYDEL"
-                    android:layout_margin="10dp"
-                    android:textColor="@color/blue"
-                    android:textSize="16sp"
-                    android:fontFamily="@font/fredoka"/>
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/productTypeTitle"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/fredoka"
+                android:text="@string/product_type"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/totalWeightTitle" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Payment:"
-                    android:layout_margin="10dp"
-                    android:textSize="16sp"
-                    android:textColor="@color/black"
-                    android:fontFamily="@font/fredoka"/>
+            <TextView
+                android:id="@+id/productTypeTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/fredoka"
+                android:text="@string/orderIdNoTxt"
+                android:textColor="@color/blue"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/productTypeTitle"
+                app:layout_constraintStart_toEndOf="@id/productTypeTitle"
+                app:layout_constraintTop_toTopOf="@id/productTypeTitle" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="₹ 67834"
-                    android:layout_margin="10dp"
-                    android:textColor="@color/blue"
-                    android:textSize="16sp"
-                    android:fontFamily="@font/fredoka"/>
+            <TextView
+                android:id="@+id/paymentTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/fredoka"
+                android:text="@string/payment"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/productTypeTitle" />
 
-
-            </LinearLayout>
+            <TextView
+                android:id="@+id/paymentTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/fredoka"
+                android:text="@string/paymentDummyValue"
+                android:textColor="@color/blue"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/paymentTitle"
+                app:layout_constraintStart_toEndOf="@+id/paymentTitle"
+                app:layout_constraintTop_toTopOf="@+id/paymentTitle" />
 
             <ImageView
+                android:id="@+id/barCodeImage"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:src="@drawable/barcode"/>
+                android:layout_marginTop="16dp"
+                android:contentDescription="@string/barcode_image"
+                android:src="@drawable/barcode"
+                app:layout_constraintTop_toBottomOf="@id/paymentTitle" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/downloadInv"
                 android:layout_width="200dp"
-                android:layout_height="40dp"
-                android:text="Donload"
-                android:background="@drawable/signinbutton_bg"
-                android:textColor="@color/white"
-                android:fontFamily="@font/fredoka"
-                android:textSize="16sp"
+                android:layout_height="50dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_margin="10dp"
-                android:textAllCaps="false"/>
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/signinbutton_bg"
+                android:fontFamily="@font/fredoka"
+                android:text="@string/download"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/barCodeImage" />
 
-
-
-        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
 
-
-
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

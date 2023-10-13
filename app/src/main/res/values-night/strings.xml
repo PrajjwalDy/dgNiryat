@@ -1,0 +1,128 @@
+<resources>
+    <string name="app_name">dgNiryat</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Consignment</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_profile_user">profile_user</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add_password">Add Password</string>
+    <string name="generate_password">Generate Password</string>
+    <string name="minerals">Minerals</string>
+    <string name="to_japan">to: Japan</string>
+    <string name="raw_material">Raw Material</string>
+    <string name="ornaments">Ornaments</string>
+    <string name="to_usa">to: USA</string>
+    <string name="gold">Gold</string>
+    <string name="to_england">to: England</string>
+    <string name="staus_image">Staus Image</string>
+    <string name="download">Download</string>
+    <string name="invoices">Invoices</string>
+    <string name="dakghar_niryat_kendra">Dakghar Niryat Kendra</string>
+    <string name="orderIdNoTxt">AZAZ67834y32TYDEL</string>
+    <string name="total_weight">Total Weight:</string>
+    <string name="totalWeightDummyValue">50000Gms</string>
+    <string name="product_type">Product Type:</string>
+    <string name="payment">Payment:</string>
+    <string name="paymentDummyValue">₹ 67834</string>
+    <string name="barcode_image">Barcode Image</string>
+    <string name="book_article">Book Article</string>
+    <string name="article_nickname">Article Nickname</string>
+    <string name="no_of_types_of_item">No. of types of item</string>
+    <string name="gross_weight">Gross Weight (GMS)</string>
+    <string name="no_of_lic_invoice_certificate">No. of Lic./Invoice/Certificate</string>
+    <string name="lic">Lic.</string>
+    <string name="certificate">Certificate</string>
+    <string name="proceed">Proceed</string>
+    <string name="receiver_name">Receiver Name</string>
+    <string name="company_house_no">Company/House No.</string>
+    <string name="address_line_1">Address Line 1</string>
+    <string name="address_line_2">Address Line 2</string>
+    <string name="city">City</string>
+    <string name="country">Country</string>
+    <string name="phone_no">Phone No.</string>
+    <string name="email">Email</string>
+    <string name="pay">Pay</string>
+    <string name="dummy_amount_value">0000.00</string>
+    <string name="charge_breakdown">Charge Breakdown</string>
+    <string name="country_charge">Country Charge:</string>
+    <string name="dummy_amount_value_2">0.00</string>
+    <string name="weight_charge">Weight Charge:</string>
+    <string name="gst">GST:</string>
+    <string name="calculate_postage">Calculate Postage</string>
+    <string name="calculate">Calculate</string>
+    <string name="result">Result</string>
+    <string name="estimated_cost_50_000">Estimated cost: 50,000</string>
+    <string name="gross_weight_1500gms">Gross Weight: 1500gms</string>
+    <string name="country_usa">Country: USA</string>
+    <string name="service_available">Service Available</string>
+    <string name="france">France</string>
+    <string name="usa">USA</string>
+    <string name="japan">Japan</string>
+    <string name="russia">Russia</string>
+    <string name="england">England</string>
+    <string name="po_pending">PO Pending</string>
+    <string name="status">Status</string>
+    <string name="status_icon">Status Icon</string>
+    <string name="in_transit">In Transit</string>
+    <string name="customs">Customs</string>
+    <string name="custom_cleared">Custom Cleared</string>
+    <string name="delivered">Delivered</string>
+
+    <string-array name="Country">
+        <item>Select Country</item>
+        <item>USA</item>
+        <item>England</item>
+        <item>Russia</item>
+        <item>France</item>
+        <item>Japan</item>
+    </string-array>
+
+
+    <string-array name="Product">
+        <item>Select Product</item>
+        <item>EMS Merchandise</item>
+        <item>EMS Document</item>
+        <item>Regd. Small Packet</item>
+        <item>Air Parcel</item>
+        <item>Regd.Letter</item>
+        <item>Tracked Packets</item>
+
+    </string-array>
+
+    <string-array name="Level">
+        <item>Dakghar</item>
+        <item>Export Warehouse</item>
+        <item>Export Custom</item>
+        <item>Ship Warehouse</item>
+        <item>Import Custom</item>
+        <item>Import Warehouse</item>
+        <item>Regional Logistics</item>
+        <item>Delivered</item>
+
+    </string-array>
+
+    <string-array name="ItemCategory">
+        <item>Select Item Category</item>
+        <item>Commercial Sample</item>
+        <item>Return Goods</item>
+        <item>Sale of Goods</item>
+        <item>Others</item>
+    </string-array>
+
+
+    <string-array name="NonDelivery">
+        <item>If Not Delivered</item>
+        <item>Abandoned</item>
+        <item>RTS-Priority</item>
+        <item>RTS-Non Priority</item>
+    </string-array>
+
+    <string-array name="PBE">
+        <item>Select PBE</item>
+        <item>PBE III(E-Commercial Items)</item>
+        <item>PBE IV(Non E-Commercial Items)</item>
+
+    </string-array>
+
+
+</resources>

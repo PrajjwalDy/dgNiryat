@@ -12,11 +12,10 @@
     <uses-feature
         android:name="android.hardware.camera"
         android:required="false" />
+
     <uses-feature
         android:name="android.hardware.telephony"
         android:required="false" />
-
-
 
     <application
         android:allowBackup="true"
@@ -28,27 +27,35 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DgNiryat"
         tools:targetApi="31">
+
         <activity
-            android:name=".Activity.Invoice"
+            android:name=".ui.otherscreen.activity.InvoiceActivity"
             android:exported="false" />
+
         <activity
-            android:name=".Activity.BarcodeScan"
+            android:name=".ui.otherscreen.activity.BarcodeScan"
             android:exported="false"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+
         <activity
-            android:name=".Activity.BusinessProfile"
+            android:name=".ui.otherscreen.activity.BusinessProfile"
             android:exported="false" />
+
         <activity
-            android:name=".Activity.AdminPortal"
+            android:name=".ui.otherscreen.activity.AdminPortal"
             android:exported="false" />
+
         <activity
-            android:name=".Activity.AdminSignup"
+            android:name=".ui.otherscreen.activity.AdminSignup"
             android:exported="false" />
+
         <activity
-            android:name=".Activity.AdminLogin"
+            android:name=".ui.otherscreen.activity.AdminLogin"
             android:exported="false" />
+
         <activity
-            android:name=".Activity.welcome"
+            android:name=".ui.otherscreen.activity.welcome"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -56,22 +63,27 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
-            android:name=".Activity.PaymentActivity"
+            android:name=".ui.otherscreen.activity.PaymentActivity"
             android:exported="false" />
+
         <activity
-            android:name=".Activity.verification"
+            android:name=".ui.otherscreen.activity.verification"
             android:exported="false" />
+
         <activity
-            android:name=".Activity.sign_up"
+            android:name=".ui.otherscreen.activity.sign_up"
             android:exported="false" />
+
         <activity
-            android:name=".Activity.Login"
+            android:name=".ui.otherscreen.activity.Login"
             android:exported="true" />
+
         <activity
-            android:name=".MainActivity"
-            android:exported="true"
-            android:label="@string/app_name" />
+            android:name=".ui.MainActivity"
+            android:exported="true" />
+
     </application>
 
 </manifest>
