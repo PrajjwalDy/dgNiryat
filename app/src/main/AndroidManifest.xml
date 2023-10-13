@@ -12,11 +12,10 @@
     <uses-feature
         android:name="android.hardware.camera"
         android:required="false" />
+
     <uses-feature
         android:name="android.hardware.telephony"
         android:required="false" />
-
-
 
     <application
         android:allowBackup="true"
@@ -28,25 +27,33 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DgNiryat"
         tools:targetApi="31">
+
         <activity
             android:name=".Activity.Invoice"
             android:exported="false" />
+
         <activity
             android:name=".Activity.BarcodeScan"
             android:exported="false"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+
         <activity
             android:name=".Activity.BusinessProfile"
             android:exported="false" />
+
         <activity
             android:name=".Activity.AdminPortal"
             android:exported="false" />
+
         <activity
             android:name=".Activity.AdminSignup"
             android:exported="false" />
+
         <activity
             android:name=".Activity.AdminLogin"
             android:exported="false" />
+
         <activity
             android:name=".Activity.welcome"
             android:exported="true">
@@ -56,22 +63,27 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".Activity.PaymentActivity"
             android:exported="false" />
+
         <activity
             android:name=".Activity.verification"
             android:exported="false" />
+
         <activity
             android:name=".Activity.sign_up"
             android:exported="false" />
+
         <activity
             android:name=".Activity.Login"
             android:exported="true" />
+
         <activity
             android:name=".MainActivity"
-            android:exported="true"
-            android:label="@string/app_name" />
+            android:exported="true" />
+
     </application>
 
 </manifest>
