@@ -1,32 +1,31 @@
 package com.hindu.dgniryat.ui.otherscreen.fragments.AvailableCountry
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.hindu.dgniryat.R
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import com.hindu.dgniryat.databinding.FragmentAvailableCountryBinding
 
 class AvailableCountry : Fragment() {
 
-    companion object {
-        fun newInstance() = AvailableCountry()
-    }
+    private var _binding: FragmentAvailableCountryBinding? = null
+    private val binding get(): FragmentAvailableCountryBinding = _binding!!
 
-    private lateinit var viewModel: AvailableCountryViewModel
+    private val viewModel: AvailableCountryViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_available_country, container, false)
+        _binding = FragmentAvailableCountryBinding.inflate(inflater, container, false)
+
+        return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(AvailableCountryViewModel::class.java)
-        // TODO: Use the ViewModel
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
-
 }

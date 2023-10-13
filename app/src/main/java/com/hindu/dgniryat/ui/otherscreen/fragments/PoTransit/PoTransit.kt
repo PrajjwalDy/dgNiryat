@@ -1,32 +1,31 @@
 package com.hindu.dgniryat.ui.otherscreen.fragments.PoTransit
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.hindu.dgniryat.R
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import com.hindu.dgniryat.databinding.FragmentPoTransitBinding
 
 class PoTransit : Fragment() {
 
-    companion object {
-        fun newInstance() = PoTransit()
-    }
+    private var _binding: FragmentPoTransitBinding? = null
+    private val binding get(): FragmentPoTransitBinding = _binding!!
 
-    private lateinit var viewModel: PoTransitViewModel
+    private val viewModel: PoTransitViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_po_transit, container, false)
+        _binding = FragmentPoTransitBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(PoTransitViewModel::class.java)
-        // TODO: Use the ViewModel
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
 }

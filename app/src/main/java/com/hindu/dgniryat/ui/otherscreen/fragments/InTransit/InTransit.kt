@@ -1,32 +1,31 @@
 package com.hindu.dgniryat.ui.otherscreen.fragments.InTransit
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.hindu.dgniryat.R
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import com.hindu.dgniryat.databinding.FragmentInTransitBinding
 
 class InTransit : Fragment() {
 
-    companion object {
-        fun newInstance() = InTransit()
-    }
-
-    private lateinit var viewModel: InTransitViewModel
+    private var _binding: FragmentInTransitBinding? = null
+    private val binding get(): FragmentInTransitBinding = _binding!!
+    private val viewModel: InTransitViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_in_transit, container, false)
+        _binding = FragmentInTransitBinding.inflate(inflater, container, false)
+
+        return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(InTransitViewModel::class.java)
-        // TODO: Use the ViewModel
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
 }

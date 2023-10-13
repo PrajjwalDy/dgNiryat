@@ -15,7 +15,7 @@ class InvoiceFragment : Fragment() {
     private var _binding: FragmentInvoiceBinding? = null
     private val binding get(): FragmentInvoiceBinding = _binding!!
 
-    private val viewModel: InvoiceViewModel by viewModels()
+    private val invoiceViewModel: InvoiceViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

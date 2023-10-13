@@ -71,7 +71,7 @@
 
     <fragment
         android:id="@+id/bookArticle"
-        android:name="com.hindu.dgniryat.ui.otherscreen.fragments.BookArticle"
+        android:name="com.hindu.dgniryat.ui.otherscreen.fragments.BookArticle.BookArticle"
         android:label="fragment_book_article"
         tools:layout="@layout/fragment_book_article">
         <action
@@ -83,17 +83,17 @@
     </fragment>
     <fragment
         android:id="@+id/postageCalculation"
-        android:name="com.hindu.dgniryat.ui.otherscreen.fragments.PostageCalculation"
+        android:name="com.hindu.dgniryat.ui.otherscreen.fragments.PostageCalculation.PostageCalculation"
         android:label="fragment_postage_calculation"
         tools:layout="@layout/fragment_postage_calculation" />
     <fragment
         android:id="@+id/articleDetails"
-        android:name="com.hindu.dgniryat.ui.otherscreen.fragments.ArticleDetails"
+        android:name="com.hindu.dgniryat.ui.otherscreen.fragments.ArticleDetails.ArticleDetails"
         android:label="fragment_article_details"
         tools:layout="@layout/fragment_article_details" />
     <fragment
         android:id="@+id/trackingFragment"
-        android:name="com.hindu.dgniryat.ui.otherscreen.fragments.TrackingFragment"
+        android:name="com.hindu.dgniryat.ui.otherscreen.fragments.TrackingFragment.TrackingFragment"
         android:label="fragment_tracking"
         tools:layout="@layout/fragment_tracking">
         <action

@@ -1,32 +1,31 @@
 package com.hindu.dgniryat.ui.otherscreen.fragments.Delivered
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.hindu.dgniryat.R
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import com.hindu.dgniryat.databinding.FragmentDeliveredBinding
 
 class Delivered : Fragment() {
 
-    companion object {
-        fun newInstance() = Delivered()
-    }
+    private var _binding: FragmentDeliveredBinding? = null
+    private val binding get(): FragmentDeliveredBinding = _binding!!
 
-    private lateinit var viewModel: DeliveredViewModel
+    private val viewModel: DeliveredViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_delivered, container, false)
+        _binding = FragmentDeliveredBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(DeliveredViewModel::class.java)
-        // TODO: Use the ViewModel
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
 }

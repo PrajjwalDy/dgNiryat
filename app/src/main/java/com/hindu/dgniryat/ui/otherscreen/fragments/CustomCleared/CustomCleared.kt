@@ -1,32 +1,31 @@
 package com.hindu.dgniryat.ui.otherscreen.fragments.CustomCleared
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.hindu.dgniryat.R
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import com.hindu.dgniryat.databinding.FragmentCustomClearedBinding
 
 class CustomCleared : Fragment() {
 
-    companion object {
-        fun newInstance() = CustomCleared()
-    }
+    private var _binding: FragmentCustomClearedBinding? = null
+    private val binding get(): FragmentCustomClearedBinding = _binding!!
 
-    private lateinit var viewModel: CustomClearedViewModel
+    private val viewModel: CustomClearedViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_custom_cleared, container, false)
+        _binding = FragmentCustomClearedBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(CustomClearedViewModel::class.java)
-        // TODO: Use the ViewModel
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
 }

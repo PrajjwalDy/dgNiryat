@@ -1,32 +1,31 @@
 package com.hindu.dgniryat.ui.otherscreen.fragments.Customs
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.hindu.dgniryat.R
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import com.hindu.dgniryat.databinding.FragmentCustomBinding
 
 class Custom : Fragment() {
 
-    companion object {
-        fun newInstance() = Custom()
-    }
+    private var _binding: FragmentCustomBinding? = null
+    private val binding get(): FragmentCustomBinding = _binding!!
 
-    private lateinit var viewModel: CustomViewModel
+    private val viewModel: CustomViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_custom, container, false)
+        _binding = FragmentCustomBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(CustomViewModel::class.java)
-        // TODO: Use the ViewModel
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
 }

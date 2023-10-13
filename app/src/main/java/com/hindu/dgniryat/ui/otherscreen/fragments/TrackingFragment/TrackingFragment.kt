@@ -1,4 +1,4 @@
-package com.hindu.dgniryat.ui.otherscreen.fragments
+package com.hindu.dgniryat.ui.otherscreen.fragments.TrackingFragment
 
 import android.content.Context
 import android.graphics.Color
