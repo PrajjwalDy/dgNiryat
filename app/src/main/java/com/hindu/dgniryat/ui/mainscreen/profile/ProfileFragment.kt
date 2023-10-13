@@ -1,4 +1,4 @@
-package com.hindu.dgniryat.ui.otherscreen.fragments
+package com.hindu.dgniryat.ui.mainscreen.profile
 
 import android.content.Intent
 import android.os.Bundle

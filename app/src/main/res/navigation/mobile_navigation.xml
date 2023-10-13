@@ -64,7 +64,7 @@
 
     <fragment
         android:id="@+id/navigation_profile"
-        android:name="com.hindu.dgniryat.ui.otherscreen.fragments.ProfileFragment"
+        android:name="com.hindu.dgniryat.ui.mainscreen.profile.ProfileFragment"
         android:label="Profile"
         tools:layout="@layout/fragment_profile" />
 

@@ -18,7 +18,6 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-
             <TextView
                 android:id="@+id/appBar_text_book_article"
                 android:layout_width="wrap_content"
