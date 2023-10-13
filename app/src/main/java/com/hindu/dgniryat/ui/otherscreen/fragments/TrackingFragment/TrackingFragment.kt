@@ -17,204 +17,144 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.hindu.dgniryat.model.StatusModel
 import com.hindu.dgniryat.R
+import com.hindu.dgniryat.databinding.FragmentTrackingBinding
 
 class TrackingFragment : Fragment() {
 
-    private lateinit var orderId:String
-    private lateinit var orderName:String
-    private lateinit var message_up:TextView
-    private lateinit var messgage_sw:TextView
-    private lateinit var messgage_ic:TextView
-    private lateinit var messgage_iw:TextView
-    private lateinit var messgage_ec:TextView
-    private lateinit var messgage_ew:TextView
-    private lateinit var messgage_rl:TextView
+    private var _binding: FragmentTrackingBinding? = null
+    private val binding get(): FragmentTrackingBinding = _binding!!
 
-    private lateinit var text_up:TextView
-    private lateinit var text_dg:TextView
-    private lateinit var text_ew:TextView
-    private lateinit var text_ec:TextView
-    private lateinit var text_sw:TextView
-    private lateinit var text_ic:TextView
-    private lateinit var text_iw:TextView
-    private lateinit var text_rl:TextView
-    private lateinit var text_dl:TextView
-
-    //ImageView
-    private lateinit var image_up:ImageView
-    private lateinit var image_dg:ImageView
-    private lateinit var image_dl:ImageView
-    private lateinit var image_ec:ImageView
-    private lateinit var image_ew:ImageView
-    private lateinit var image_ic:ImageView
-    private lateinit var image_iw:ImageView
-    private lateinit var image_rl:ImageView
-    private lateinit var image_sw:ImageView
-
+    private lateinit var orderId: String
+    private lateinit var orderName: String
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        _binding = FragmentTrackingBinding.inflate(inflater, container, false)
 
-        val root:View = inflater.inflate(R.layout.fragment_tracking, container, false)
 
         val pref = context?.getSharedPreferences("PREFS", Context.MODE_PRIVATE)
-        if (pref != null){
-            this.orderId = pref.getString("orderId","none")!!
-            this.orderName = pref.getString("articleName","none")!!
+        if (pref != null) {
+            this.orderId = pref.getString("orderId", "none")!!
+            this.orderName = pref.getString("articleName", "none")!!
         }
 
+        binding.apply {
 
-        val details = root.findViewById<TextView>(R.id.detailsTV)
-        val articleName = root.findViewById<TextView>(R.id.articleName_track)
-        val orderNo = root.findViewById<TextView>(R.id.orderNo_track)
+            orderNoTrack.text = "Order ID: $orderId"
+            articleNameTrack.text = orderName
 
-        message_up = root.findViewById<TextView>(R.id.message_dp_dakghar)
-        messgage_sw = root.findViewById<TextView>(R.id.message_shipWarehouse)
-        messgage_ic = root.findViewById<TextView>(R.id.message_importCustoms)
-        messgage_iw = root.findViewById<TextView>(R.id.message_import_warehouse)
-        messgage_rl = root.findViewById<TextView>(R.id.message_reg_logistics)
-        messgage_ec = root.findViewById<TextView>(R.id.message_exportCustom)
-        messgage_ew = root.findViewById<TextView>(R.id.message_exportWarehouse)
+            detailsTV.setOnClickListener {
+                val pref = context?.getSharedPreferences("PREFS", Context.MODE_PRIVATE)?.edit()
+                pref?.putString("orderId", orderId)
+                pref?.apply()
+                Navigation.findNavController(root)
+                    .navigate(R.id.action_trackingFragment_to_articleDetails)
+            }
 
-        //TextView
-        text_dg = root.findViewById<TextView>(R.id.dp_dakghar)
-        text_ew = root.findViewById<TextView>(R.id.exportWarehouse)
-        text_ec = root.findViewById<TextView>(R.id.exportCustom)
-        text_sw = root.findViewById<TextView>(R.id.ship_warehouse)
-        text_ic = root.findViewById<TextView>(R.id.import_custom)
-        text_iw = root.findViewById<TextView>(R.id.import_warehouse)
-        text_rl = root.findViewById(R.id.import_warehouse)
-        text_dl = root.findViewById(R.id.delivered)
+            updateStatus()
 
-        //Images
-        image_up = root.findViewById<ImageView>(R.id.img_underProcess)
-        image_dg = root.findViewById<ImageView>(R.id.img_dp_dakghar)
-        image_ew = root.findViewById<ImageView>(R.id.img_export_warehouse)
-        image_ec = root.findViewById<ImageView>(R.id.img_export_custom)
-        image_sw = root.findViewById<ImageView>(R.id.img_ship_warehouse)
-        image_ic = root.findViewById<ImageView>(R.id.img_import_custom)
-        image_iw = root.findViewById<ImageView>(R.id.img_import_warehouse)
-        image_rl = root.findViewById<ImageView>(R.id.img_regional_logistic)
-        image_dl = root.findViewById<ImageView>(R.id.img_delivered)
-
-
-        orderNo.text = "Order ID:"+orderId
-        articleName.text = orderName
-
-        details.setOnClickListener {
-            val pref = context?.getSharedPreferences("PREFS", Context.MODE_PRIVATE)?.edit()
-            pref?.putString("orderId",orderId)
-            pref?.apply()
-            Navigation.findNavController(root).navigate(R.id.action_trackingFragment_to_articleDetails)
         }
 
-        updateStatus()
-
-
-
-
-        return root
+        return binding.root
     }
 
-    private fun updateStatus(){
+    private fun updateStatus() {
         val dbRef = FirebaseDatabase.getInstance().reference.child("Status")
             .child(orderId)
 
         val blue = ContextCompat.getColor(requireContext(), R.color.blue)
 
-        dbRef.addValueEventListener(object :ValueEventListener{
+        dbRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                if (snapshot.exists()){
+                if (snapshot.exists()) {
                     val data = snapshot.getValue(StatusModel::class.java)
-                    if (data?.underProcess ==1){
-                        image_up.setImageResource(R.drawable.process_approved)
-                    }else if (data?.underProcess==2){
-                        image_up.setImageResource(R.drawable.process_rejected)
+                    if (data?.underProcess == 1) {
+                        binding.imgUnderProcess.setImageResource(R.drawable.process_approved)
+                    } else if (data?.underProcess == 2) {
+                        binding.imgUnderProcess.setImageResource(R.drawable.process_rejected)
                     }
 
-
-
-                    if (data?.dispatchDakghar==1){
-                        image_dg.setImageResource(R.drawable.process_approved)
-                        text_dg.setTextColor(blue)
-                    }else if (data?.dispatchDakghar==2){
-                        image_dg.setImageResource(R.drawable.process_rejected)
-                        message_up.setTextColor(Color.RED)
+                    if (data?.dispatchDakghar == 1) {
+                        binding.imgDpDakghar.setImageResource(R.drawable.process_approved)
+                        binding.dpDakghar.setTextColor(blue)
+                    } else if (data?.dispatchDakghar == 2) {
+                        binding.imgDpDakghar.setImageResource(R.drawable.process_rejected)
+                        binding.messageDpDakghar.setTextColor(Color.RED)
                     }
 
-                    message_up.text = data?.message_dg
+                    binding.messageDpDakghar.text = data?.message_dg
 
 
-                    if (data?.reachedExportWH==1){
-                        image_ew.setImageResource(R.drawable.process_approved)
-                        text_ew.setTextColor(blue)
-                    }else if (data?.reachedExportWH==2){
-                        image_ew.setImageResource(R.drawable.process_rejected)
-                        messgage_ew.setTextColor(Color.RED)
+                    if (data?.reachedExportWH == 1) {
+                        binding.imgExportWarehouse.setImageResource(R.drawable.process_approved)
+                        binding.exportWarehouse.setTextColor(blue)
+                    } else if (data?.reachedExportWH == 2) {
+                        binding.imgExportWarehouse.setImageResource(R.drawable.process_rejected)
+                        binding.exportWarehouse.setTextColor(Color.RED)
                     }
 
-                    messgage_ew.text = data?.message_ew
+                    binding.messageExportWarehouse.text = data?.message_ew
 
-                    if (data?.exportCustom==1){
-                        image_ec.setImageResource(R.drawable.process_approved)
-                        text_ec.setTextColor(blue)
-                    }else if (data?.exportCustom==2){
-                        image_ec.setImageResource(R.drawable.process_rejected)
-                        messgage_ec.setTextColor(Color.RED)
+                    if (data?.exportCustom == 1) {
+                        binding.imgExportCustom.setImageResource(R.drawable.process_approved)
+                        binding.exportCustom.setTextColor(blue)
+                    } else if (data?.exportCustom == 2) {
+                        binding.imgExportCustom.setImageResource(R.drawable.process_rejected)
+                        binding.exportCustom.setTextColor(Color.RED)
                     }
 
-                    messgage_ec.text = data?.message_ec
+                    binding.messageExportCustom.text = data?.message_ec
 
-                    if (data?.shipWarehouse==1){
-                        image_sw.setImageResource(R.drawable.process_approved)
-                        text_sw.setTextColor(blue)
-                    }else if (data?.shipWarehouse==2){
-                        image_sw.setImageResource(R.drawable.process_rejected)
-                        messgage_sw.setTextColor(Color.RED)
+                    if (data?.shipWarehouse == 1) {
+                        binding.imgShipWarehouse.setImageResource(R.drawable.process_approved)
+                        binding.shipWarehouse.setTextColor(blue)
+                    } else if (data?.shipWarehouse == 2) {
+                        binding.imgShipWarehouse.setImageResource(R.drawable.process_rejected)
+                        binding.shipWarehouse.setTextColor(Color.RED)
                     }
 
-                    messgage_sw.text = data?.message_sw
+                    binding.messageShipWarehouse.text = data?.message_sw
 
-                    if (data?.importCustom==1){
-                        image_ic.setImageResource(R.drawable.process_approved)
-                        text_ic.setTextColor(blue)
-                    }else if (data?.importCustom==2){
-                        image_ic.setImageResource(R.drawable.process_rejected)
-                        messgage_ic.setTextColor(Color.RED)
+                    if (data?.importCustom == 1) {
+                        binding.imgImportCustom.setImageResource(R.drawable.process_approved)
+                        binding.importCustom.setTextColor(blue)
+                    } else if (data?.importCustom == 2) {
+                        binding.imgImportCustom.setImageResource(R.drawable.process_rejected)
+                        binding.importCustom.setTextColor(Color.RED)
                     }
 
-                    messgage_ic.text = data?.message_ic
+                    binding.messageImportCustoms.text = data?.message_ic
 
-                    if (data?.importWarehouse==1){
-                        image_iw.setImageResource(R.drawable.process_approved)
-                        text_iw.setTextColor(blue)
-                    }else if (data?.importWarehouse==2){
-                        image_iw.setImageResource(R.drawable.process_rejected)
-                        messgage_sw.setTextColor(Color.RED)
+                    if (data?.importWarehouse == 1) {
+                        binding.imgImportWarehouse.setImageResource(R.drawable.process_approved)
+                        binding.importWarehouse.setTextColor(blue)
+                    } else if (data?.importWarehouse == 2) {
+                        binding.imgImportWarehouse.setImageResource(R.drawable.process_rejected)
+                        binding.importWarehouse.setTextColor(Color.RED)
                     }
 
-                    messgage_iw.text = data?.message_iw
+                    binding.messageImportWarehouse.text = data?.message_iw
 
-                    if (data?.regionalLogistics==1){
-                        image_rl.setImageResource(R.drawable.process_approved)
-                        text_rl.setTextColor(blue)
-                    }else if (data?.regionalLogistics==2){
-                        image_rl.setImageResource(R.drawable.process_rejected)
-                        messgage_rl.setTextColor(Color.RED)
+                    if (data?.regionalLogistics == 1) {
+                        binding.imgRegionalLogistic.setImageResource(R.drawable.process_approved)
+                        binding.regionalLogistic.setTextColor(blue)
+                    } else if (data?.regionalLogistics == 2) {
+                        binding.imgRegionalLogistic.setImageResource(R.drawable.process_rejected)
+                        binding.regionalLogistic.setTextColor(Color.RED)
                     }
 
-                    messgage_rl.text = data?.message_rl
+                    binding.messageRegLogistics.text = data?.message_rl
 
 
-                    if (data?.delivered==1){
-                        image_dl.setImageResource(R.drawable.delivered_filled)
-                        text_dl.setTextColor(blue)
-                    }else if (data?.delivered==2){
-                        image_dl.setImageResource(R.drawable.process_rejected)
+                    if (data?.delivered == 1) {
+                        binding.imgDelivered.setImageResource(R.drawable.delivered_filled)
+                        binding.delivered.setTextColor(blue)
+                    } else if (data?.delivered == 2) {
+                        binding.imgDelivered.setImageResource(R.drawable.process_rejected)
+                        binding.delivered.setTextColor(Color.RED)
                     }
-
 
 
                 }
@@ -225,6 +165,11 @@ class TrackingFragment : Fragment() {
             }
 
         })
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
 }

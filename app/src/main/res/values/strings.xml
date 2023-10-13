@@ -70,7 +70,6 @@
     <string name="custom_cleared">Custom Cleared</string>
     <string name="delivered">Delivered</string>
 
-
     <string-array name="Country">
         <item>Select Country</item>
         <item>USA</item>
