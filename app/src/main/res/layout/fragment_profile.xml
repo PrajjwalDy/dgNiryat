@@ -8,7 +8,7 @@
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="@dimens/fifty_dp"
         android:background="@color/white">
 
         <RelativeLayout
@@ -22,11 +22,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_margin="10dp"
+                android:layout_margin="@dimens/ten_dp"
                 android:fontFamily="@font/fredoka"
                 android:text="Profile"
                 android:textColor="@color/red"
-                android:textSize="20sp" />
+                android:textSize="@dimens/twenty_sp" />
 
             <TextView
                 android:id="@+id/logout"
@@ -34,23 +34,23 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_gravity="center_vertical"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginStart="@dimens/ten_dp"
+                android:layout_marginTop="@dimens/ten_dp"
+                android:layout_marginEnd="@dimens/ten_dp"
+                android:layout_marginBottom="@dimens/ten_dp"
                 android:fontFamily="@font/fredoka"
                 android:text="Logout"
                 android:textColor="@color/blue"
-                android:textSize="20sp" />
+                android:textSize="@dimens/twenty_sp" />
         </RelativeLayout>
 
     </com.google.android.material.appbar.AppBarLayout>
 
     <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="@dimens/hundred_dp"
+        android:layout_height="@dimens/hundred_dp"
         android:layout_gravity="center_horizontal"
-        android:layout_margin="20dp"
+        android:layout_margin="@dimens/twenty_dp"
         android:src="@drawable/user"/>
 
     <TextView
@@ -59,8 +59,8 @@
         android:layout_height="wrap_content"
         android:text="FullName"
         android:layout_gravity="center_horizontal"
-        android:textSize="18sp"
-        android:layout_marginBottom="20dp"
+        android:textSize="@dimens/eighteen_sp"
+        android:layout_marginBottom="@dimens/twenty_dp"
         android:fontFamily="@font/fredoka"
         android:textColor="@color/blue"
         android:textStyle="bold"/>
@@ -70,8 +70,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Email:"
-        android:layout_marginStart="10dp"
-        android:textSize="16sp"
+        android:layout_marginStart="@dimens/ten_dp"
+        android:textSize="@dimens/sixteen_sp"
         android:textColor="@color/black"/>
 
     <TextView
@@ -79,25 +79,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Mobile No."
-        android:layout_marginStart="10dp"
-        android:textSize="16sp"
+        android:layout_marginStart="@dimens/ten_dp"
+        android:textSize="@dimens/sixteen_sp"
         android:textColor="@color/black"/>
     <TextView
         android:id="@+id/waytobusiness"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Business Profile"
-        android:layout_marginStart="10dp"
-        android:textSize="16sp"
+        android:layout_marginStart="@dimens/ten_dp"
+        android:textSize="@dimens/sixteen_sp"
         android:textColor="@color/black"/>
 
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="18sp"
+        android:textSize="@dimens/eighteen_sp"
         android:text="Recent Consignment"
-        android:layout_margin="20dp"
+        android:layout_margin="@dimens/twenty_dp"
         android:fontFamily="@font/fredoka"
         android:textColor="@color/blue"
         android:textStyle="bold"/>

@@ -10,7 +10,7 @@
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="50@dimens/fifty_dpdp"
         android:background="@color/white">
 
         <LinearLayout
@@ -23,11 +23,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_margin="10dp"
+                android:layout_margin="@dimens/ten_dp"
                 android:text="Article Details"
                 android:fontFamily="@font/fredoka"
                 android:textColor="@color/red"
-                android:textSize="20sp" />
+                android:textSize="@dimens/twenty_sp" />
         </LinearLayout>
 
     </com.google.android.material.appbar.AppBarLayout>

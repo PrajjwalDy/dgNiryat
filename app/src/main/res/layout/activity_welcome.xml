@@ -10,26 +10,26 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:elevation="10dp"
+        android:elevation="@dimens/ten_dp"
         >
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="155dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginTop="@dimens/forty_dp"
+        android:layout_marginEnd="@dimens/ten_dp"
         android:fontFamily="@font/fredoka"
         android:text="Local Goes Global"
         android:textColor="@color/red"
-        android:textSize="27dp" />
+        android:textSize="27sp" />
         <ImageView
-            android:layout_width="140dp"
-            android:layout_height="110dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_width="@dimens/hundred_forty_dp"
+            android:layout_height="@dimens/hundred_ten_dp"
+            android:layout_marginStart="@dimens/ten_dp"
+            android:layout_marginTop="@dimens/ten_dp"
             android:src="@drawable/dnk2"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginEnd="@dimens/ten_dp"
+            android:layout_marginBottom="@dimens/ten_dp"
             />
     </RelativeLayout>
 
@@ -41,11 +41,11 @@
             android:layout_width="match_parent"
             android:layout_height="220dp"
             android:src="@drawable/women"
-            android:layout_margin="20dp"/>
+            android:layout_margin="@dimens/twenty_dp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="@dimens/ten_dp"
             android:layout_gravity="center"
             android:text="dg-Niryat"
             android:fontFamily="@font/fredoka"
@@ -54,35 +54,35 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:elevation="10dp"
+            android:layout_marginTop="@dimens/thirty_dp"
+            android:elevation="@dimens/ten_dp"
             >
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/user_new"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
+            android:layout_width="@dimens/width_zero_dp"
+            android:layout_height="@dimens/fifty_dp"
            android:layout_gravity="center"
-            android:layout_margin="5dp"
+            android:layout_margin="@dimens/five_dp"
             android:background="@drawable/signinbutton_bg"
-            android:elevation="5dp"
+            android:elevation="@dimens/five_dp"
             android:text="USER"
             android:layout_weight="1"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="18sp" />
+            android:textSize="@dimens/eighteen_sp" />
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/admin_new"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
+            android:layout_width="@dimens/width_zero_dp"
+            android:layout_height="@dimens/fifty_dp"
            android:layout_gravity="center"
             android:background="@drawable/adminbackground"
-            android:elevation="5dp"
+            android:elevation="@dimens/five_dp"
             android:text="ADMIN"
-            android:layout_margin="5dp"
+            android:layout_margin="@dimens/five_dp"
             android:layout_weight="1"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="18sp" />
+            android:textSize="@dimens/eighteen_sp" />
         </LinearLayout>
     </LinearLayout>
 
