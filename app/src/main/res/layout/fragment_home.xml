@@ -17,21 +17,21 @@
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="@dimens/hundred_fifty_dp"
                 android:scaleType="fitXY"
                 android:src="@drawable/carousel" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="@dimens/twenty_dp"
                 android:layout_marginTop="-25dp"
-                android:layout_marginEnd="20dp"
+                android:layout_marginEnd="@dimens/twenty_dp"
                 android:background="@drawable/search_box_bg">
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="@dimens/fifty_dp"
                     android:layout_toStartOf="@id/searchIcon"
                     android:backgroundTint="@color/lightred"
                     android:hint="Search with Article No."
@@ -40,8 +40,8 @@
 
                 <ImageView
                     android:id="@+id/searchIcon"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
+                    android:layout_width="@dimens/thirty_five_dp"
+                    android:layout_height="@dimens/thirty_five_dp"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:src="@drawable/search"
@@ -53,15 +53,15 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="@dimens/twenty_dp"
                 android:orientation="horizontal">
 
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/invoice"
-                    android:layout_width="0dp"
-                    android:layout_height="110dp"
-                    android:layout_margin="10dp"
+                    android:layout_width="@dimens/width_zero_dp"
+                    android:layout_height="@dimens/hundred_ten_dp"
+                    android:layout_margin="@dimens/ten_dp"
                     android:layout_weight="1"
                     app:cardCornerRadius="7pt"
                     app:cardElevation="5pt">
@@ -73,15 +73,15 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:layout_margin="10dp"
+                            android:layout_width="@dimens/sixty_dp"
+                            android:layout_height="@dimens/sixty_dp"
+                            android:layout_margin="@dimens/ten_dp"
                             android:src="@drawable/invoice" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_margin="5dp"
+                            android:layout_margin="@dimens/five_dp"
                             android:text="Invoice"
                             android:textAlignment="center"
                             android:textColor="@color/red" />
@@ -94,9 +94,9 @@
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/calculatePostage"
-                    android:layout_width="0dp"
-                    android:layout_height="110dp"
-                    android:layout_margin="10dp"
+                    android:layout_width="@dimens/width_zero_dp"
+                    android:layout_height="@dimens/hundred_ten_dp"
+                    android:layout_margin="@dimens/ten_dp"
                     android:layout_weight="1"
                     app:cardCornerRadius="7pt"
                     app:cardElevation="5pt">
@@ -108,15 +108,15 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:layout_margin="10dp"
+                            android:layout_width="@dimens/sixty_dp"
+                            android:layout_height="@dimens/sixty_dp"
+                            android:layout_margin="@dimens/ten_dp"
                             android:src="@drawable/calculator" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_margin="5dp"
+                            android:layout_margin="@dimens/five_dp"
                             android:text="Postage"
                             android:textAlignment="center"
                             android:textColor="@color/red" />
@@ -129,9 +129,9 @@
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/available_card"
-                    android:layout_width="0dp"
-                    android:layout_height="110dp"
-                    android:layout_margin="10dp"
+                    android:layout_width="@dimens/width_zero_dp"
+                    android:layout_height="@dimens/hundred_ten_dp"
+                    android:layout_margin="@dimens/ten_dp"
                     android:layout_weight="1"
                     app:cardCornerRadius="7pt"
                     app:cardElevation="5pt">
@@ -143,15 +143,15 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:layout_margin="10dp"
+                            android:layout_width="@dimens/sixty_dp"
+                            android:layout_height="@dimens/sixty_dp"
+                            android:layout_margin="@dimens/ten_dp"
                             android:src="@drawable/location" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_margin="5dp"
+                            android:layout_margin="@dimens/five_dp"
                             android:text="Availability"
                             android:textColor="@color/red" />
 
@@ -168,10 +168,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_margin="@dimens/ten_dp"
                 android:text="My Articles"
                 android:textColor="@color/red"
-                android:textSize="18sp" />
+                android:textSize="@dimens/eighteen_sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -180,12 +180,12 @@
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/poPending"
-                    android:layout_width="0dp"
+                    android:layout_width="@dimens/width_zero_dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="25dp"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="@dimens/ten_dp"
+                    android:layout_marginTop="@dimens/ten_dp"
+                    android:layout_marginEnd="@dimens/twenty_five_dp"
+                    android:layout_marginBottom="@dimens/ten_dp"
                     android:layout_weight="1"
                     app:cardCornerRadius="5pt"
                     app:cardElevation="3pt">
@@ -193,21 +193,21 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
+                        android:layout_margin="@dimens/ten_dp"
                         android:gravity="center"
                         android:orientation="vertical">
 
                         <ImageView
                             android:layout_width="65dp"
-                            android:layout_height="50dp"
-                            android:layout_margin="10dp"
+                            android:layout_height="@dimens/fifty_dp"
+                            android:layout_margin="@dimens/ten_dp"
                             android:src="@drawable/clock" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="PO Pending"
-                            android:textSize="16sp" />
+                            android:textSize="@dimens/sixteen_sp" />
 
                     </LinearLayout>
 
@@ -216,12 +216,12 @@
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/inTransit"
-                    android:layout_width="0dp"
+                    android:layout_width="@dimens/width_zero_dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="25dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="@dimens/twenty_five_dp"
+                    android:layout_marginTop="@dimens/ten_dp"
+                    android:layout_marginEnd="@dimens/ten_dp"
+                    android:layout_marginBottom="@dimens/ten_dp"
                     android:layout_weight="1"
                     app:cardCornerRadius="5pt"
                     app:cardElevation="3pt">
@@ -229,21 +229,21 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
+                        android:layout_margin="@dimens/ten_dp"
                         android:gravity="center"
                         android:orientation="vertical">
 
                         <ImageView
                             android:layout_width="65dp"
-                            android:layout_height="50dp"
-                            android:layout_margin="10dp"
+                            android:layout_height="@dimens/fifty_dp"
+                            android:layout_margin="@dimens/ten_dp"
                             android:src="@drawable/delivery" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="In Transit"
-                            android:textSize="16sp" />
+                            android:textSize="@dimens/sixteen_sp" />
 
                     </LinearLayout>
 
@@ -260,12 +260,12 @@
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/underProcess"
-                    android:layout_width="0dp"
+                    android:layout_width="@dimens/width_zero_dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="25dp"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="@dimens/ten_dp"
+                    android:layout_marginTop="@dimens/ten_dp"
+                    android:layout_marginEnd="@dimens/twenty_five_dp"
+                    android:layout_marginBottom="@dimens/ten_dp"
                     android:layout_weight="1"
                     app:cardCornerRadius="5pt"
                     app:cardElevation="3pt">
@@ -273,21 +273,21 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
+                        android:layout_margin="@dimens/ten_dp"
                         android:gravity="center"
                         android:orientation="vertical">
 
                         <ImageView
                             android:layout_width="65dp"
-                            android:layout_height="50dp"
-                            android:layout_margin="10dp"
+                            android:layout_height="@dimens/fifty_dp"
+                            android:layout_margin="@dimens/ten_dp"
                             android:src="@drawable/under_process" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Under Process"
-                            android:textSize="16sp" />
+                            android:textSize="@dimens/sixteen_sp" />
 
                     </LinearLayout>
 
@@ -296,12 +296,12 @@
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/customs"
-                    android:layout_width="0dp"
+                    android:layout_width="@dimens/width_zero_dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="25dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="@dimens/twenty_five_dp"
+                    android:layout_marginTop="@dimens/ten_dp"
+                    android:layout_marginEnd="@dimens/ten_dp"
+                    android:layout_marginBottom="@dimens/ten_dp"
                     android:layout_weight="1"
                     app:cardCornerRadius="5pt"
                     app:cardElevation="3pt">
@@ -309,21 +309,21 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
+                        android:layout_margin="@dimens/ten_dp"
                         android:gravity="center"
                         android:orientation="vertical">
 
                         <ImageView
                             android:layout_width="65dp"
-                            android:layout_height="50dp"
-                            android:layout_margin="10dp"
+                            android:layout_height="@dimens/fifty_dp"
+                            android:layout_margin="@dimens/ten_dp"
                             android:src="@drawable/custom" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Customs"
-                            android:textSize="16sp" />
+                            android:textSize="@dimens/sixteen_sp" />
 
                     </LinearLayout>
 
@@ -340,12 +340,12 @@
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/customsCleared"
-                    android:layout_width="0dp"
+                    android:layout_width="@dimens/width_zero_dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="25dp"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="@dimens/ten_dp"
+                    android:layout_marginTop="@dimens/ten_dp"
+                    android:layout_marginEnd="@dimens/twenty_five_dp"
+                    android:layout_marginBottom="@dimens/ten_dp"
                     android:layout_weight="1"
                     app:cardCornerRadius="5pt"
                     app:cardElevation="3pt">
@@ -353,21 +353,21 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
+                        android:layout_margin="@dimens/ten_dp"
                         android:gravity="center"
                         android:orientation="vertical">
 
                         <ImageView
                             android:layout_width="65dp"
-                            android:layout_height="50dp"
-                            android:layout_margin="10dp"
+                            android:layout_height="@dimens/fifty_dp"
+                            android:layout_margin="@dimens/ten_dp"
                             android:src="@drawable/correct" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Custom Cleared"
-                            android:textSize="16sp" />
+                            android:textSize="@dimens/sixteen_sp" />
 
                     </LinearLayout>
 
@@ -376,12 +376,12 @@
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/delivered"
-                    android:layout_width="0dp"
+                    android:layout_width="@dimens/width_zero_dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="25dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="@dimens/twenty_five_dp"
+                    android:layout_marginTop="@dimens/ten_dp"
+                    android:layout_marginEnd="@dimens/ten_dp"
+                    android:layout_marginBottom="@dimens/ten_dp"
                     android:layout_weight="1"
                     app:cardCornerRadius="5pt"
                     app:cardElevation="3pt">
@@ -389,21 +389,21 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
+                        android:layout_margin="@dimens/ten_dp"
                         android:gravity="center"
                         android:orientation="vertical">
 
                         <ImageView
                             android:layout_width="65dp"
-                            android:layout_height="50dp"
-                            android:layout_margin="10dp"
+                            android:layout_height="@dimens/fifty_dp"
+                            android:layout_margin="@dimens/ten_dp"
                             android:src="@drawable/shipped" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Delivered"
-                            android:textSize="16sp" />
+                            android:textSize="@dimens/sixteen_sp" />
 
                     </LinearLayout>
 
@@ -425,10 +425,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginEnd="18dp"
-        android:layout_marginBottom="18dp"
+        android:layout_marginStart="@dimens/eighteen_dp"
+        android:layout_marginTop="@dimens/eighteen_dp"
+        android:layout_marginEnd="@dimens/eighteen_dp"
+        android:layout_marginBottom="@dimens/eighteen_dp"
         android:backgroundTint="@color/red"
         android:clickable="true"
         android:focusable="true"

@@ -9,7 +9,7 @@
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="@dimens/fifty_dp"
         android:background="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,11 +25,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_margin="10dp"
+                android:layout_margin="@dimens/ten_dp"
                 android:fontFamily="@font/fredoka"
                 android:text="@string/invoice"
                 android:textColor="@color/red"
-                android:textSize="20sp"
+                android:textSize="@dimens/twenty_sp"
                 android:textStyle="bold"/>
 
         </LinearLayout>
@@ -40,12 +40,12 @@
         android:id="@+id/productCard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:elevation="10dp"
+        android:layout_marginStart="@dimens/ten_dp"
+        android:layout_marginTop="@dimens/ten_dp"
+        android:layout_marginEnd="@dimens/ten_dp"
+        android:elevation="@dimens/ten_dp"
         app:cardBackgroundColor="@color/default_card_bg"
-        app:cardCornerRadius="10dp"
+        app:cardCornerRadius="@dimens/ten_dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
@@ -53,7 +53,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="130dp"
-            android:padding="16dp">
+            android:padding="@dimens/activity_horizontal_margin">
 
             <TextView
                 android:id="@+id/orderName"
@@ -63,7 +63,7 @@
                 android:maxLines="1"
                 android:text="@string/minerals"
                 android:textColor="@color/red"
-                android:textSize="18sp"
+                android:textSize="@dimens/eighteen_sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -72,11 +72,11 @@
                 android:id="@+id/toCountyLayout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="@dimens/ten_dp"
                 android:fontFamily="@font/fredoka"
                 android:text="@string/to_japan"
                 android:textColor="@color/black"
-                android:textSize="16sp"
+                android:textSize="@dimens/sixteen_sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/orderName" />
 
@@ -84,17 +84,17 @@
                 android:id="@+id/productType_layout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="@dimens/ten_dp"
                 android:fontFamily="@font/fredoka"
                 android:text="@string/raw_material"
                 android:textColor="@color/black"
-                android:textSize="16sp"
+                android:textSize="@dimens/sixteen_sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/toCountyLayout" />
 
             <TextView
                 android:id="@+id/textView"
-                android:layout_width="0dp"
+                android:layout_width="@dimens/width_zero_dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/fredoka"
                 android:text=""
@@ -105,8 +105,8 @@
 
             <ImageView
                 android:id="@+id/statusImage"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="@dimens/fifty_dp"
+                android:layout_height="@dimens/fifty_dp"
                 android:src="@drawable/invoice"
                 android:contentDescription="@string/staus_image"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -114,7 +114,7 @@
 
             <TextView
                 android:id="@+id/status"
-                android:layout_width="0dp"
+                android:layout_width="@dimens/width_zero_dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/fredoka"
                 android:text=""
@@ -131,12 +131,12 @@
         android:id="@+id/inv_cv2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:elevation="10dp"
+        android:layout_marginStart="@dimens/ten_dp"
+        android:layout_marginTop="@dimens/ten_dp"
+        android:layout_marginEnd="@dimens/ten_dp"
+        android:elevation="@dimens/ten_dp"
         app:cardBackgroundColor="@color/default_card_bg"
-        app:cardCornerRadius="10dp"
+        app:cardCornerRadius="@dimens/ten_dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/productCard">
@@ -144,7 +144,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="130dp"
-            android:padding="16dp">
+            android:padding="@dimens/activity_horizontal_margin">
 
             <TextView
                 android:id="@+id/cv2_orderName"
@@ -154,7 +154,7 @@
                 android:maxLines="1"
                 android:text="@string/ornaments"
                 android:textColor="@color/red"
-                android:textSize="18sp"
+                android:textSize="@dimens/eighteen_sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -163,11 +163,11 @@
                 android:id="@+id/cv2_toCountyLayout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="@dimens/ten_dp"
                 android:fontFamily="@font/fredoka"
                 android:text="@string/to_usa"
                 android:textColor="@color/black"
-                android:textSize="16sp"
+                android:textSize="@dimens/sixteen_sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/cv2_orderName" />
 
@@ -175,17 +175,17 @@
                 android:id="@+id/cv2_productType_layout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="@dimens/ten_dp"
                 android:fontFamily="@font/fredoka"
                 android:text="@string/raw_material"
                 android:textColor="@color/black"
-                android:textSize="16sp"
+                android:textSize="@dimens/sixteen_sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/cv2_toCountyLayout" />
 
             <TextView
                 android:id="@+id/cv2_textView"
-                android:layout_width="0dp"
+                android:layout_width="@dimens/width_zero_dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/fredoka"
                 android:text=""
@@ -196,8 +196,8 @@
 
             <ImageView
                 android:id="@+id/cv2_statusImage"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="@dimens/fifty_dp"
+                android:layout_height="@dimens/fifty_dp"
                 android:src="@drawable/invoice"
                 android:contentDescription="@string/staus_image"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -205,7 +205,7 @@
 
             <TextView
                 android:id="@+id/cv2_status"
-                android:layout_width="0dp"
+                android:layout_width="@dimens/width_zero_dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/fredoka"
                 android:text=""
@@ -222,12 +222,12 @@
         android:id="@+id/inv_cv3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:elevation="10dp"
+        android:layout_marginStart="@dimens/ten_dp"
+        android:layout_marginTop="@dimens/ten_dp"
+        android:layout_marginEnd="@dimens/ten_dp"
+        android:elevation="@dimens/ten_dp"
         app:cardBackgroundColor="@color/default_card_bg"
-        app:cardCornerRadius="10dp"
+        app:cardCornerRadius="@dimens/ten_dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/inv_cv2">
@@ -235,7 +235,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="130dp"
-            android:padding="16dp">
+            android:padding="@dimens/activity_horizontal_margin">
 
             <TextView
                 android:id="@+id/cv3_orderName"
@@ -245,7 +245,7 @@
                 android:maxLines="1"
                 android:text="@string/gold"
                 android:textColor="@color/red"
-                android:textSize="18sp"
+                android:textSize="@dimens/eighteen_sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -254,11 +254,11 @@
                 android:id="@+id/cv3_toCountyLayout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="@dimens/ten_dp"
                 android:fontFamily="@font/fredoka"
                 android:text="@string/to_england"
                 android:textColor="@color/black"
-                android:textSize="16sp"
+                android:textSize="@dimens/sixteen_sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/cv3_orderName" />
 
@@ -266,17 +266,17 @@
                 android:id="@+id/cv3_productType_layout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="@dimens/ten_dp"
                 android:fontFamily="@font/fredoka"
                 android:text="@string/raw_material"
                 android:textColor="@color/black"
-                android:textSize="16sp"
+                android:textSize="@dimens/sixteen_sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/cv3_toCountyLayout" />
 
             <TextView
                 android:id="@+id/cv3_textView"
-                android:layout_width="0dp"
+                android:layout_width="@dimens/width_zero_dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/fredoka"
                 android:text=""
@@ -287,8 +287,8 @@
 
             <ImageView
                 android:id="@+id/cv3_statusImage"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="@dimens/fifty_dp"
+                android:layout_height="@dimens/fifty_dp"
                 android:src="@drawable/invoice"
                 android:contentDescription="@string/staus_image"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -296,7 +296,7 @@
 
             <TextView
                 android:id="@+id/cv3_status"
-                android:layout_width="0dp"
+                android:layout_width="@dimens/width_zero_dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/fredoka"
                 android:text=""

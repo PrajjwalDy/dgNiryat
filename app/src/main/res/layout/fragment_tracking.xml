@@ -8,7 +8,7 @@
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="@dimens/fifty_dp"
         android:background="@color/white">
 
         <LinearLayout
@@ -21,11 +21,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_margin="10dp"
+                android:layout_margin="@dimens/ten_dp"
                 android:fontFamily="@font/fredoka"
                 android:text="Track Articles"
                 android:textColor="@color/red"
-                android:textSize="20sp"
+                android:textSize="@dimens/twenty_sp"
                 android:textStyle="bold"/>
 
         </LinearLayout>
@@ -41,22 +41,22 @@
             android:id="@+id/articleName_track"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_margin="@dimens/ten_dp"
             android:fontFamily="@font/fredoka"
             android:text="Article Name"
             android:textColor="@color/black"
-            android:textSize="18sp" />
+            android:textSize="@dimens/eighteen_sp" />
 
         <TextView
             android:id="@+id/orderNo_track"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/articleName_track"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginStart="@dimens/ten_dp"
+            android:layout_marginTop="@dimens/ten_dp"
             android:fontFamily="@font/fredoka"
             android:text="Order No."
-            android:textSize="16sp" />
+            android:textSize="@dimens/sixteen_sp" />
 
         <TextView
             android:id="@+id/detailsTV"
@@ -64,21 +64,21 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginStart="@dimens/ten_dp"
+            android:layout_marginTop="@dimens/ten_dp"
+            android:layout_marginEnd="@dimens/twenty_dp"
+            android:layout_marginBottom="@dimens/ten_dp"
             android:fontFamily="@font/fredoka"
             android:text="Details"
             android:textColor="@color/blue"
-            android:textSize="18sp" />
+            android:textSize="@dimens/eighteen_sp" />
 
     </RelativeLayout>
 
    <ScrollView
        android:layout_width="match_parent"
        android:layout_height="match_parent"
-       android:layout_marginTop="25dp">
+       android:layout_marginTop="@dimens/twenty_five_dp">
 
        <LinearLayout
            android:layout_width="match_parent"
@@ -88,35 +88,35 @@
            <RelativeLayout
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
-               android:layout_marginTop="10dp">
+               android:layout_marginTop="@dimens/ten_dp">
 
                <TextView
                    android:id="@+id/underProcess"
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
-                   android:layout_marginStart="10dp"
-                   android:layout_marginEnd="10dp"
-                   android:layout_marginBottom="10dp"
+                   android:layout_marginStart="@dimens/ten_dp"
+                   android:layout_marginEnd="@dimens/ten_dp"
+                   android:layout_marginBottom="@dimens/ten_dp"
                    android:fontFamily="@font/fredoka"
                    android:text="Under Process"
                    android:textColor="@color/blue"
-                   android:textSize="16sp"
+                   android:textSize="@dimens/sixteen_sp"
                    android:textStyle="bold" />
 
                <TextView
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:layout_below="@+id/underProcess"
-                   android:layout_marginStart="10dp"
+                   android:layout_marginStart="@dimens/ten_dp"
                    android:fontFamily="@font/fredoka"
                    android:text="At Dakghar" />
 
                <ImageView
                    android:id="@+id/img_underProcess"
                    android:layout_width="wrap_content"
-                   android:layout_height="60dp"
+                   android:layout_height="@dimens/sixty_dp"
                    android:layout_alignParentEnd="true"
-                   android:layout_marginEnd="20dp"
+                   android:layout_marginEnd="@dimens/twenty_dp"
                    android:src="@drawable/progress_under_process" />
 
 
@@ -130,12 +130,12 @@
                    android:id="@+id/dp_dakghar"
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
-                   android:layout_marginStart="10dp"
-                   android:layout_marginEnd="10dp"
-                   android:layout_marginBottom="10dp"
+                   android:layout_marginStart="@dimens/ten_dp"
+                   android:layout_marginEnd="@dimens/ten_dp"
+                   android:layout_marginBottom="@dimens/ten_dp"
                    android:fontFamily="@font/fredoka"
                    android:text="Dispatched From Dakghar"
-                   android:textSize="16sp"
+                   android:textSize="@dimens/sixteen_sp"
                    android:textStyle="bold" />
 
                <TextView
@@ -143,16 +143,16 @@
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:layout_below="@+id/dp_dakghar"
-                   android:layout_marginStart="10dp"
+                   android:layout_marginStart="@dimens/ten_dp"
                    android:fontFamily="@font/fredoka"
                    android:text="" />
 
                <ImageView
                    android:id="@+id/img_dp_dakghar"
                    android:layout_width="wrap_content"
-                   android:layout_height="60dp"
+                   android:layout_height="@dimens/sixty_dp"
                    android:layout_alignParentEnd="true"
-                   android:layout_marginEnd="20dp"
+                   android:layout_marginEnd="@dimens/twenty_dp"
                    android:src="@drawable/process_blank" />
 
 
@@ -166,12 +166,12 @@
                    android:id="@+id/exportWarehouse"
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
-                   android:layout_marginStart="10dp"
-                   android:layout_marginEnd="10dp"
-                   android:layout_marginBottom="10dp"
+                   android:layout_marginStart="@dimens/ten_dp"
+                   android:layout_marginEnd="@dimens/ten_dp"
+                   android:layout_marginBottom="@dimens/ten_dp"
                    android:fontFamily="@font/fredoka"
                    android:text="Reached Export Warehouse"
-                   android:textSize="16sp"
+                   android:textSize="@dimens/sixteen_sp"
                    android:textStyle="bold" />
 
                <TextView
@@ -179,16 +179,16 @@
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:layout_below="@+id/exportWarehouse"
-                   android:layout_marginStart="10dp"
+                   android:layout_marginStart="@dimens/ten_dp"
                    android:fontFamily="@font/fredoka"
                    android:text="" />
 
                <ImageView
                    android:id="@+id/img_export_warehouse"
                    android:layout_width="wrap_content"
-                   android:layout_height="60dp"
+                   android:layout_height="@dimens/sixty_dp"
                    android:layout_alignParentEnd="true"
-                   android:layout_marginEnd="20dp"
+                   android:layout_marginEnd="@dimens/twenty_dp"
                    android:src="@drawable/process_blank" />
 
 
@@ -202,12 +202,12 @@
                    android:id="@+id/exportCustom"
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
-                   android:layout_marginStart="10dp"
-                   android:layout_marginEnd="10dp"
-                   android:layout_marginBottom="10dp"
+                   android:layout_marginStart="@dimens/ten_dp"
+                   android:layout_marginEnd="@dimens/ten_dp"
+                   android:layout_marginBottom="@dimens/ten_dp"
                    android:fontFamily="@font/fredoka"
                    android:text="Reached Export Custom"
-                   android:textSize="16sp"
+                   android:textSize="@dimens/sixteen_sp"
                    android:textStyle="bold" />
 
                <TextView
@@ -215,16 +215,16 @@
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:layout_below="@+id/exportCustom"
-                   android:layout_marginStart="10dp"
+                   android:layout_marginStart="@dimens/ten_dp"
                    android:fontFamily="@font/fredoka"
                    android:text="" />
 
                <ImageView
                    android:id="@+id/img_export_custom"
                    android:layout_width="wrap_content"
-                   android:layout_height="60dp"
+                   android:layout_height="@dimens/sixty_dp"
                    android:layout_alignParentEnd="true"
-                   android:layout_marginEnd="20dp"
+                   android:layout_marginEnd="@dimens/twenty_dp"
                    android:src="@drawable/process_blank" />
 
 
@@ -238,12 +238,12 @@
                    android:id="@+id/ship_warehouse"
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
-                   android:layout_marginStart="10dp"
-                   android:layout_marginEnd="10dp"
-                   android:layout_marginBottom="10dp"
+                   android:layout_marginStart="@dimens/ten_dp"
+                   android:layout_marginEnd="@dimens/ten_dp"
+                   android:layout_marginBottom="@dimens/ten_dp"
                    android:fontFamily="@font/fredoka"
                    android:text="Processing at Ship Wareshouse"
-                   android:textSize="16sp"
+                   android:textSize="@dimens/sixteen_sp"
                    android:textStyle="bold" />
 
                <TextView
@@ -251,16 +251,16 @@
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:layout_below="@+id/ship_warehouse"
-                   android:layout_marginStart="10dp"
+                   android:layout_marginStart="@dimens/ten_dp"
                    android:fontFamily="@font/fredoka"
                    android:text="" />
 
                <ImageView
                    android:id="@+id/img_ship_warehouse"
                    android:layout_width="wrap_content"
-                   android:layout_height="60dp"
+                   android:layout_height="@dimens/sixty_dp"
                    android:layout_alignParentEnd="true"
-                   android:layout_marginEnd="20dp"
+                   android:layout_marginEnd="@dimens/twenty_dp"
                    android:src="@drawable/process_blank" />
 
 
@@ -274,12 +274,12 @@
                    android:id="@+id/import_custom"
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
-                   android:layout_marginStart="10dp"
-                   android:layout_marginEnd="10dp"
-                   android:layout_marginBottom="10dp"
+                   android:layout_marginStart="@dimens/ten_dp"
+                   android:layout_marginEnd="@dimens/ten_dp"
+                   android:layout_marginBottom="@dimens/ten_dp"
                    android:fontFamily="@font/fredoka"
                    android:text="Import Custom"
-                   android:textSize="16sp"
+                   android:textSize="@dimens/sixteen_sp"
                    android:textStyle="bold" />
 
                <TextView
@@ -287,16 +287,16 @@
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:layout_below="@+id/import_custom"
-                   android:layout_marginStart="10dp"
+                   android:layout_marginStart="@dimens/ten_dp"
                    android:fontFamily="@font/fredoka"
                    android:text="" />
 
                <ImageView
                    android:id="@+id/img_import_custom"
                    android:layout_width="wrap_content"
-                   android:layout_height="60dp"
+                   android:layout_height="@dimens/sixty_dp"
                    android:layout_alignParentEnd="true"
-                   android:layout_marginEnd="20dp"
+                   android:layout_marginEnd="@dimens/twenty_dp"
                    android:src="@drawable/process_blank" />
 
 
@@ -310,12 +310,12 @@
                    android:id="@+id/import_warehouse"
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
-                   android:layout_marginStart="10dp"
-                   android:layout_marginEnd="10dp"
-                   android:layout_marginBottom="10dp"
+                   android:layout_marginStart="@dimens/ten_dp"
+                   android:layout_marginEnd="@dimens/ten_dp"
+                   android:layout_marginBottom="@dimens/ten_dp"
                    android:fontFamily="@font/fredoka"
                    android:text="Import Wareshouse"
-                   android:textSize="16sp"
+                   android:textSize="@dimens/sixteen_sp"
                    android:textStyle="bold" />
 
                <TextView
@@ -323,16 +323,16 @@
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:layout_below="@+id/import_warehouse"
-                   android:layout_marginStart="10dp"
+                   android:layout_marginStart="@dimens/ten_dp"
                    android:fontFamily="@font/fredoka"
                    android:text="" />
 
                <ImageView
                    android:id="@+id/img_import_warehouse"
                    android:layout_width="wrap_content"
-                   android:layout_height="60dp"
+                   android:layout_height="@dimens/sixty_dp"
                    android:layout_alignParentEnd="true"
-                   android:layout_marginEnd="20dp"
+                   android:layout_marginEnd="@dimens/twenty_dp"
                    android:src="@drawable/process_blank" />
 
 
@@ -346,12 +346,12 @@
                    android:id="@+id/regional_logistic"
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
-                   android:layout_marginStart="10dp"
-                   android:layout_marginEnd="10dp"
-                   android:layout_marginBottom="10dp"
+                   android:layout_marginStart="@dimens/ten_dp"
+                   android:layout_marginEnd="@dimens/ten_dp"
+                   android:layout_marginBottom="@dimens/ten_dp"
                    android:fontFamily="@font/fredoka"
                    android:text="At Regional Logistics"
-                   android:textSize="16sp"
+                   android:textSize="@dimens/sixteen_sp"
                    android:textStyle="bold" />
 
                <TextView
@@ -359,16 +359,16 @@
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:layout_below="@+id/regional_logistic"
-                   android:layout_marginStart="10dp"
+                   android:layout_marginStart="@dimens/ten_dp"
                    android:fontFamily="@font/fredoka"
                    android:text="" />
 
                <ImageView
                    android:id="@+id/img_regional_logistic"
                    android:layout_width="wrap_content"
-                   android:layout_height="60dp"
+                   android:layout_height="@dimens/sixty_dp"
                    android:layout_alignParentEnd="true"
-                   android:layout_marginEnd="20dp"
+                   android:layout_marginEnd="@dimens/twenty_dp"
                    android:src="@drawable/process_blank" />
 
 
@@ -376,29 +376,29 @@
 
            <RelativeLayout
                android:layout_width="match_parent"
-               android:layout_height="60dp"
-               android:layout_marginBottom="10dp">
+               android:layout_height="@dimens/sixty_dp"
+               android:layout_marginBottom="@dimens/ten_dp">
 
                <TextView
                    android:id="@+id/delivered"
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:layout_alignParentBottom="true"
-                   android:layout_marginStart="10dp"
-                   android:layout_marginTop="10dp"
-                   android:layout_marginEnd="10dp"
+                   android:layout_marginStart="@dimens/ten_dp"
+                   android:layout_marginTop="@dimens/ten_dp"
+                   android:layout_marginEnd="@dimens/ten_dp"
                    android:fontFamily="@font/fredoka"
                    android:text="Delivered"
-                   android:textSize="16sp"
+                   android:textSize="@dimens/sixteen_sp"
                    android:textStyle="bold" />
 
 
                <ImageView
                    android:id="@+id/img_delivered"
                    android:layout_width="wrap_content"
-                   android:layout_height="60dp"
+                   android:layout_height="@dimens/sixty_dp"
                    android:layout_alignParentEnd="true"
-                   android:layout_marginEnd="20dp"
+                   android:layout_marginEnd="@dimens/twenty_dp"
                    android:src="@drawable/delivered_blank" />
 
 

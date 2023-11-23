@@ -4,9 +4,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="7pt"
     app:cardElevation="5pt"
-    android:layout_marginStart="5dp"
-    android:layout_marginEnd="5dp"
-    android:layout_marginTop="5dp"
+    android:layout_marginStart="@dimens/five_dp"
+    android:layout_marginEnd="@dimens/five_dp"
+    android:layout_marginTop="@dimens/five_dp"
     android:layout_height="wrap_content">
 
     <RelativeLayout
@@ -16,7 +16,7 @@
         <LinearLayout
             android:id="@+id/basicDetails"
             android:layout_width="wrap_content"
-            android:layout_height="150dp"
+            android:layout_height="@dimens/hundred_fifty_dp"
             android:layout_centerVertical="true"
             android:orientation="vertical">
 
@@ -25,11 +25,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="ArticleName"
-                android:layout_margin="10dp"
+                android:layout_margin="@dimens/ten_dp"
                 android:textColor="@color/red"
                 android:fontFamily="@font/fredoka"
                 android:textStyle="bold"
-                android:textSize="18sp"
+                android:textSize="@dimens/eighteen_sp"
                 android:maxLength="200"
                 android:maxLines="1"/>
 
@@ -37,22 +37,22 @@
                 android:id="@+id/toCounty_layout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
+                android:textSize="@dimens/sixteen_sp"
                 android:text="to: Country"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="@dimens/ten_dp"
                 android:textColor="@color/black"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="@dimens/ten_dp"
                 android:fontFamily="@font/fredoka"/>
 
             <TextView
                 android:id="@+id/productType_layout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
+                android:textSize="@dimens/sixteen_sp"
                 android:text="Product Type"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="@dimens/ten_dp"
                 android:textColor="@color/black"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="@dimens/ten_dp"
                 android:fontFamily="@font/fredoka"/>
 
 
@@ -62,7 +62,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_margin="20dp"
+            android:layout_margin="@dimens/twenty_dp"
             android:gravity="center_horizontal"
             android:orientation="vertical">
 
@@ -75,9 +75,9 @@
 
             <ImageView
                 android:id="@+id/statusImage"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_margin="5dp"
+                android:layout_width="@dimens/fifty_dp"
+                android:layout_height="@dimens/fifty_dp"
+                android:layout_margin="@dimens/five_dp"
                 android:src="@drawable/under_process"/>
 
             <TextView

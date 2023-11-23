@@ -9,7 +9,7 @@
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="@dimens/fifty_dp"
         android:background="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,11 +25,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_margin="10dp"
+                android:layout_margin="@dimens/ten_dp"
                 android:fontFamily="@font/fredoka"
                 android:text="@string/po_pending"
                 android:textColor="@color/red"
-                android:textSize="20sp"
+                android:textSize="@dimens/twenty_sp"
                 android:textStyle="bold" />
 
         </LinearLayout>
@@ -46,16 +46,16 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp">
+            android:paddingStart="@dimens/activity_horizontal_margin"
+            android:paddingEnd="@dimens/activity_horizontal_margin">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/productCard1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:elevation="10dp"
-                app:cardCornerRadius="10dp"
+                android:layout_marginTop="@dimens/activity_horizontal_margin"
+                android:elevation="@dimens/ten_dp"
+                app:cardCornerRadius="@dimens/ten_dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -68,7 +68,7 @@
                     <LinearLayout
                         android:id="@+id/basicDetails"
                         android:layout_width="wrap_content"
-                        android:layout_height="150dp"
+                        android:layout_height="@dimens/hundred_fifty_dp"
                         android:layout_centerVertical="true"
                         android:orientation="vertical">
 
@@ -76,36 +76,36 @@
                             android:id="@+id/orderName"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_margin="10dp"
+                            android:layout_margin="@dimens/ten_dp"
                             android:fontFamily="@font/fredoka"
                             android:maxLength="200"
                             android:maxLines="1"
                             android:text="@string/minerals"
                             android:textColor="@color/red"
-                            android:textSize="18sp"
+                            android:textSize="@dimens/eighteen_sp"
                             android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/toCounty_layout"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginBottom="10dp"
+                            android:layout_marginStart="@dimens/ten_dp"
+                            android:layout_marginBottom="@dimens/ten_dp"
                             android:fontFamily="@font/fredoka"
                             android:text="@string/to_japan"
                             android:textColor="@color/black"
-                            android:textSize="16sp" />
+                            android:textSize="@dimens/sixteen_sp" />
 
                         <TextView
                             android:id="@+id/productType_layout"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginBottom="10dp"
+                            android:layout_marginStart="@dimens/ten_dp"
+                            android:layout_marginBottom="@dimens/ten_dp"
                             android:fontFamily="@font/fredoka"
                             android:text="@string/raw_material"
                             android:textColor="@color/black"
-                            android:textSize="16sp" />
+                            android:textSize="@dimens/sixteen_sp" />
 
 
                     </LinearLayout>
@@ -114,7 +114,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
-                        android:layout_margin="20dp"
+                        android:layout_margin="@dimens/twenty_dp"
                         android:gravity="center_horizontal"
                         android:orientation="vertical">
 
@@ -127,9 +127,9 @@
 
                         <ImageView
                             android:id="@+id/statusImage"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:layout_margin="5dp"
+                            android:layout_width="@dimens/fifty_dp"
+                            android:layout_height="@dimens/fifty_dp"
+                            android:layout_margin="@dimens/five_dp"
                             android:src="@drawable/clock" />
 
                         <TextView
@@ -147,9 +147,9 @@
                 android:id="@+id/productCard2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:elevation="10dp"
-                app:cardCornerRadius="10dp"
+                android:layout_marginTop="@dimens/twelve_dp"
+                android:elevation="@dimens/ten_dp"
+                app:cardCornerRadius="@dimens/ten_dp"
                 app:layout_constraintTop_toBottomOf="@id/productCard1">
 
                 <RelativeLayout
@@ -159,41 +159,41 @@
 
                     <LinearLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="150dp"
+                        android:layout_height="@dimens/hundred_fifty_dp"
                         android:layout_centerVertical="true"
                         android:orientation="vertical">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_margin="10dp"
+                            android:layout_margin="@dimens/ten_dp"
                             android:fontFamily="@font/fredoka"
                             android:maxLength="200"
                             android:maxLines="1"
                             android:text="@string/ornaments"
                             android:textColor="@color/red"
-                            android:textSize="18sp"
+                            android:textSize="@dimens/eighteen_sp"
                             android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginBottom="10dp"
+                            android:layout_marginStart="@dimens/ten_dp"
+                            android:layout_marginBottom="@dimens/ten_dp"
                             android:fontFamily="@font/fredoka"
                             android:text="@string/to_usa"
                             android:textColor="@color/black"
-                            android:textSize="16sp" />
+                            android:textSize="@dimens/sixteen_sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginBottom="10dp"
+                            android:layout_marginStart="@dimens/ten_dp"
+                            android:layout_marginBottom="@dimens/ten_dp"
                             android:fontFamily="@font/fredoka"
                             android:text="@string/raw_material"
                             android:textColor="@color/black"
-                            android:textSize="16sp" />
+                            android:textSize="@dimens/sixteen_sp" />
 
 
                     </LinearLayout>
@@ -202,7 +202,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
-                        android:layout_margin="20dp"
+                        android:layout_margin="@dimens/twenty_dp"
                         android:gravity="center_horizontal"
                         android:orientation="vertical">
 
@@ -214,9 +214,9 @@
                             android:textColor="@color/blue" />
 
                         <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:layout_margin="5dp"
+                            android:layout_width="@dimens/fifty_dp"
+                            android:layout_height="@dimens/fifty_dp"
+                            android:layout_margin="@dimens/five_dp"
                             android:contentDescription="@string/status_icon"
                             android:src="@drawable/clock" />
 
@@ -237,9 +237,9 @@
                 android:id="@+id/productCard3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:elevation="10dp"
-                app:cardCornerRadius="10dp"
+                android:layout_marginTop="@dimens/twelve_dp"
+                android:elevation="@dimens/ten_dp"
+                app:cardCornerRadius="@dimens/ten_dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/productCard2">
@@ -251,41 +251,41 @@
 
                     <LinearLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="150dp"
+                        android:layout_height="@dimens/hundred_fifty_dp"
                         android:layout_centerVertical="true"
                         android:orientation="vertical">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_margin="10dp"
+                            android:layout_margin="@dimens/ten_dp"
                             android:fontFamily="@font/fredoka"
                             android:maxLength="200"
                             android:maxLines="1"
                             android:text="@string/gold"
                             android:textColor="@color/red"
-                            android:textSize="18sp"
+                            android:textSize="@dimens/eighteen_sp"
                             android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginBottom="10dp"
+                            android:layout_marginStart="@dimens/ten_dp"
+                            android:layout_marginBottom="@dimens/ten_dp"
                             android:fontFamily="@font/fredoka"
                             android:text="@string/to_england"
                             android:textColor="@color/black"
-                            android:textSize="16sp" />
+                            android:textSize="@dimens/sixteen_sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginBottom="10dp"
+                            android:layout_marginStart="@dimens/ten_dp"
+                            android:layout_marginBottom="@dimens/ten_dp"
                             android:fontFamily="@font/fredoka"
                             android:text="@string/raw_material"
                             android:textColor="@color/black"
-                            android:textSize="16sp" />
+                            android:textSize="@dimens/sixteen_sp" />
 
 
                     </LinearLayout>
@@ -294,7 +294,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
-                        android:layout_margin="20dp"
+                        android:layout_margin="@dimens/twenty_dp"
                         android:gravity="center_horizontal"
                         android:orientation="vertical">
 
@@ -306,9 +306,9 @@
                             android:textColor="@color/blue" />
 
                         <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:layout_margin="5dp"
+                            android:layout_width="@dimens/fifty_dp"
+                            android:layout_height="@dimens/fifty_dp"
+                            android:layout_margin="@dimens/five_dp"
                             android:contentDescription="@string/status_icon"
                             android:src="@drawable/clock" />
 
